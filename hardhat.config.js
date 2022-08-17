@@ -11,8 +11,8 @@ module.exports = {
       accounts: [process.env.FUJI_ACCOUNT]
     },
     dogechain:{
-      url: 'https://api.avax-test.network/ext/bc/C/rpc',
-      
+      url: 'https://rpc.dogechain.dog',
+
       accounts: [process.env.FUJI_ACCOUNT]
 
     }
