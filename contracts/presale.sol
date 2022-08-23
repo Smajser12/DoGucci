@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/ownable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 
@@ -11,7 +11,6 @@ contract DogeSale is Ownable{
 
     constructor(address _Doge){
         Doge = _Doge;
-        
     }
 
     uint256 round = 0;
@@ -20,19 +19,18 @@ contract DogeSale is Ownable{
     address Doge;
 
     // ___Roles___
-    mapping(address => bool) public SeedRound;
-    mapping(address => bool) public BetaTester;
     mapping(address => bool) public WhiteList;
     
 
     uint256 public MaxAlloc = 10_000 ether; //In OIL
     uint256 public TokenPrice = 1 ether;
-    mapping(address => uint256) public TokenAmount; //Token Amount Bought by the User
+
+    mapping(address => uint256) public TokenAmount;
 
     function buyPresale(uint256 _amount) payable public {
         uint256 priceOfAmount = getPriceOfAmount(_amount);
         require(msg.value == priceOfAmount, "Wrong Value sent");
-        require(TokenAmount[msg.sender] <= MaxAlloc, "Full");
+        require(TokenAmount[msg.sender] + _amount <= MaxAlloc, "Full");
         
         TokenAmount[msg.sender] += _amount;
 

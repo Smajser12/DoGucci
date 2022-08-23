@@ -5,22 +5,61 @@
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
 const hre = require("hardhat");
+const BuildFiles = require("./ABI2ReactJS/index");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+    const TamaGucci = await ethers.getContractFactory("TamaGucci");
+    console.log("Deploying TamaGucciap...");
+    const tamagucci = await upgrades.deployProxy(TamaGucci);
+    console.log("TamaGucciap deployed to:", tamagucci.address);
+    await tamagucci.deployed();
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+    const TammaGucciRewardManager = await ethers.getContractFactory("TammaGucciRewardManager");
+    console.log("Deploying TammaGucciRewardManager...");
+    const tammaguccirewardmanager = await upgrades.deployProxy(TammaGucciRewardManager);
+    console.log("TammaGucciRewardManager deployed to:", tammaguccirewardmanager.address);
+    await tammaguccirewardmanager.deployed();
 
-  await lock.deployed();
+    const GucciToken = await ethers.getContractFactory("GucciToken");
+    const guccitoken = await GucciToken.deploy();
+    await guccitoken.deployed();
 
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+    const ALLADDRESSES = [guccitoken.address,tammaguccirewardmanager.address,tamagucci.address];
+
+
+    await (await guccitoken.setAll(ALLADDRESSES)).wait();
+    await (await tammaguccirewardmanager.setAll(ALLADDRESSES)).wait();
+    await (await tamagucci.setAll(ALLADDRESSES)).wait();
+
+
+
+
+    await (await tamagucci.createTamaGucciType(1,"Doge",69)).wait()
+    await (await tamagucci.createTamaGucciType(2,"ChadDoge",100)).wait()
+    await (await tamagucci.createTamaGucciType(3,"SnoopDog",420)).wait()
+    await (await tamagucci.createTamaGucciType(4,"TopDog",1000)).wait()
+    
+
+    await (await tamagucci.createObjectType(1,1000,10)).wait()
+    await (await tamagucci.createObjectType(2,1000,10)).wait()
+    await (await tamagucci.createObjectType(3,1000,5)).wait()
+    await (await tamagucci.createObjectType(4,1000,5)).wait()
+
+
+    // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _shitTimeRateLevelUp,uint256 _rewardRateLevelUp,uint256 _feedingTimeRateLevelUp)
+    await (await tammaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100,100,100)).wait()
+    await (await tammaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100,100,100)).wait()
+    await (await tammaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100,100,100)).wait()
+    await (await tammaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()
+
+    const addresses = [
+    {"name":"tammaguccirewardmanager", "address":tammaguccirewardmanager.address},
+    {"name":"guccitoken", "address":guccitoken.address},
+    {"name":"tamagucci", "address":tamagucci.address},
+  ]
+
+  BuildFiles(addresses);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
