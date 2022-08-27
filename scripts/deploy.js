@@ -15,21 +15,21 @@ async function main() {
     console.log("TamaGucciap deployed to:", tamagucci.address);
     await tamagucci.deployed();
 
-    const TammaGucciRewardManager = await ethers.getContractFactory("TammaGucciRewardManager");
-    console.log("Deploying TammaGucciRewardManager...");
-    const tammaguccirewardmanager = await upgrades.deployProxy(TammaGucciRewardManager);
-    console.log("TammaGucciRewardManager deployed to:", tammaguccirewardmanager.address);
-    await tammaguccirewardmanager.deployed();
+    const Tamaguccirewardmanager = await ethers.getContractFactory("TamaGucciRewardManager");
+    console.log("Deploying tamaguccirewardmanager...");
+    const tamaguccirewardmanager = await upgrades.deployProxy(Tamaguccirewardmanager);
+    console.log("tamaguccirewardmanager deployed to:", tamaguccirewardmanager.address);
+    await tamaguccirewardmanager.deployed();
 
     const GucciToken = await ethers.getContractFactory("GucciToken");
     const guccitoken = await GucciToken.deploy();
     await guccitoken.deployed();
 
-    const ALLADDRESSES = [guccitoken.address,tammaguccirewardmanager.address,tamagucci.address];
+    const ALLADDRESSES = [guccitoken.address,tamaguccirewardmanager.address,tamagucci.address];
 
 
     await (await guccitoken.setAll(ALLADDRESSES)).wait();
-    await (await tammaguccirewardmanager.setAll(ALLADDRESSES)).wait();
+    await (await tamaguccirewardmanager.setAll(ALLADDRESSES)).wait();
     await (await tamagucci.setAll(ALLADDRESSES)).wait();
 
 
@@ -51,20 +51,18 @@ async function main() {
 
 
     // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _shitTimeRateLevelUp,uint256 _rewardRateLevelUp,uint256 _feedingTimeRateLevelUp)
-    await (await tammaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100,100,100)).wait()
-    await (await tammaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100,100,100)).wait()
-    await (await tammaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100,100,100)).wait()
-    await (await tammaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()
 
     const addresses = [
-    {"name":"tammaguccirewardmanager", "address":tammaguccirewardmanager.address},
-    {"name":"guccitoken", "address":guccitoken.address},
-    {"name":"tamagucci", "address":tamagucci.address},
+    {"name":"TamaGucciRewardManager", "address":tamaguccirewardmanager.address},
+    {"name":"GucciToken", "address":guccitoken.address},
+    {"name":"TamaGucci", "address":tamagucci.address},
   ]
 
   BuildFiles(addresses);
-
-  
 }
 
 // We recommend this pattern to be able to use async/await everywhere

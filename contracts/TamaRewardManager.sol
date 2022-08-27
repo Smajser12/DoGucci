@@ -7,7 +7,7 @@ import "./type/AccessControlProxi.sol";
 import "./TamaGucci.sol";
 import "./GucciToken.sol";
 
-contract TammaGucciRewardManager is TamaGucciAccessControlProxi {
+contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     struct NodeType
     {

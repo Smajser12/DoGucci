@@ -65,7 +65,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
 
 
     tamagucci memory newTama = tamagucci(tamaType,_name);
-    TammaGucciRewardManager(RewardManagerAddress).createNode(_type);
+    TamaGucciRewardManager(RewardManagerAddress).createNode(_type);
 
     tamagucciById[totalSupply()] = newTama;
     _mint(msg.sender, totalSupply());
@@ -83,7 +83,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
     object memory newObject = object(Type,_color);
     tamagucciInventory[_tamagucciID][_objectID] = newObject; 
 
-    TammaGucciRewardManager(RewardManagerAddress).boostNode(_tamagucciID, Type._bonus);
+    TamaGucciRewardManager(RewardManagerAddress).boostNode(_tamagucciID, Type._bonus);
   }
 
 
