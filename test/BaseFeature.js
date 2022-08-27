@@ -1,13 +1,12 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
-const BuildFiles = require("./ABI2ReactJS/index");
+const {
+    time,
+    loadFixture,
+  } = require("@nomicfoundation/hardhat-network-helpers");
+  const { anyValue } = require("@nomicfoundation/hardhat-chai-matchers/withArgs");
+  const { expect } = require("chai");
 
-async function main() {
+describe("DeployTamagucci", function () {
+    async function DeployAllContract() {
 
     const TamaGucci = await ethers.getContractFactory("TamaGucci");
     console.log("Deploying TamaGucciap...");
@@ -54,22 +53,6 @@ async function main() {
     await (await tammaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100,100,100)).wait()
     await (await tammaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100,100,100)).wait()
     await (await tammaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100,100,100)).wait()
-    await (await tammaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()
-
-    const addresses = [
-    {"name":"tammaguccirewardmanager", "address":tammaguccirewardmanager.address},
-    {"name":"guccitoken", "address":guccitoken.address},
-    {"name":"tamagucci", "address":tamagucci.address},
-  ]
-
-  BuildFiles(addresses);
-
-  
-}
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
+    await (await tammaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()  
+    }
 });
