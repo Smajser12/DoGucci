@@ -9,7 +9,7 @@ import "./type/AccessControl.sol";
 contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
 
   function initialize() public initializer {
-    __ERC721_init("TamaGucci", "TittyGuccy");
+    __ERC721_init("TamaGucci", "TG");
     TransferPaused = true;
     DevWallet = msg.sender;
   }
@@ -19,13 +19,11 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
 
     string _species;
     uint256 _price;
-
   }
 
   struct tamagucci{
     tamaGucciType _type;
     string _name;
-
   }
 
   struct objectType{
@@ -48,6 +46,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   mapping(uint256 => objectType) public objectTypeByID;
 
   mapping(uint256 => tamaGucciType) public tamaGucciTypeById;
+  uint256 public typeAmount;
 
   function _transfer(
         address from,
@@ -95,11 +94,10 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
 
   function createTamaGucciType(uint256 _id, string memory _name, uint256 _price) public onlyDevWalletAuthorized{
     
-    tamaGucciType memory newType = tamaGucciType(_id,_name,_price);
+    tamaGucciType memory newType = tamaGucciType(_id,_name,_price * 1 ether);
     tamaGucciTypeById[_id] = newType;
-
+    typeAmount++;
   }
-
   function getTamaGucciOfUser(address _user) public view returns (uint256[] memory){
     uint256 len = balanceOf(_user);
     uint256[] memory TamaGucciOfUser = new uint[](len);
@@ -108,7 +106,17 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
     }
     return TamaGucciOfUser;
   }
-  
+
+  function getAllType() public view returns (tamaGucciType[] memory){
+    tamaGucciType[] memory allType = new tamaGucciType[](typeAmount);
+    for(uint i = 0; i < typeAmount ; i++){
+      allType[i] = tamaGucciTypeById[i];
+    }
+    return allType;
+  }
+  function getPriceOfID(uint256 _id) public view returns (uint256){
+    return tamagucciById[_id]._type._price;
+  }
 
 
   

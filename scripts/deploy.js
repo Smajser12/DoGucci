@@ -1,9 +1,3 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
 const hre = require("hardhat");
 const BuildFiles = require("./ABI2ReactJS/index");
 
@@ -39,6 +33,13 @@ async function main() {
     await (await tamagucci.createTamaGucciType(2,"ChadDoge",100)).wait()
     await (await tamagucci.createTamaGucciType(3,"SnoopDog",420)).wait()
     await (await tamagucci.createTamaGucciType(4,"TopDog",1000)).wait()
+
+     // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _shitTimeRateLevelUp,uint256 _rewardRateLevelUp,uint256 _feedingTimeRateLevelUp)
+
+    await (await tamaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100,100,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()
     
 
     await (await tamagucci.createObjectType(1,1000,10)).wait()
@@ -46,15 +47,6 @@ async function main() {
     await (await tamagucci.createObjectType(3,1000,5)).wait()
     await (await tamagucci.createObjectType(4,1000,5)).wait()
 
-    
-   
-
-
-    // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _shitTimeRateLevelUp,uint256 _rewardRateLevelUp,uint256 _feedingTimeRateLevelUp)
-    await (await tamaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100,100,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100,100,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100,100,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100,100,100)).wait()
 
     const addresses = [
     {"name":"TamaGucciRewardManager", "address":tamaguccirewardmanager.address},

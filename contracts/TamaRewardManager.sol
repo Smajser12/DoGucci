@@ -244,7 +244,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function clearNode(uint256 _id) public {
         require(getOwnerOfNode(_id) == msg.sender, "Not your Node");
         NodeByID[_id].lastShitTime = block.timestamp;
-        NodeByID[_id].ShitTime = ((block.timestamp * block.number / block.difficulty + 1) % (24*(100 + NodeByID[_id].DirtyReduction)/100)) * 1 hours;
+        NodeByID[_id].ShitTime = ((block.timestamp * block.number / block.difficulty + 420) % 24) * 1 minutes;
     }
 
     function getPriceFeed(uint256[] memory _Id) public view returns(uint256){
@@ -295,6 +295,9 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     function getOwnerOfNode(uint256 _nodeID) public view returns (address){
         return TamaGucci(TamaGucciAddress).ownerOf(_nodeID);
+    }
+    function getCurrentDailyROI(uint256 _nodeID) public view returns (uint256){
+        return TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID) / (NodeByID[_nodeID].currentRewards * 24 hours / 2);
     }
     //Sets
 
