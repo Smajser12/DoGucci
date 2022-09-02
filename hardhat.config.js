@@ -15,9 +15,7 @@ module.exports = {
     },
     dogechain:{
       url: 'https://rpc.dogechain.dog',
-
       accounts: [process.env.FUJI_ACCOUNT]
-
     }
   },
 
