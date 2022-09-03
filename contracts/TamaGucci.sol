@@ -41,7 +41,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
 
   mapping(uint256 => tamagucci) public tamagucciById;
   mapping(uint256 => mapping(uint256 => object)) public tamagucciInventory;
-  //NFT ID => OBJECT ID => COLOR ID => OBJECT;
+  //NFT ID => OBJECT ID => OBJECT;
 
   mapping(uint256 => objectType) public objectTypeByID;
   uint256 public objectTypeCount;
@@ -107,6 +107,8 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
     tamaGucciTypeById[_id] = newType;
     typeCount++;
   }
+
+  // *** GETTERS ***
   function getTamaGucciOfUser(address _user) public view returns (uint256[] memory){
     uint256 len = balanceOf(_user);
     uint256[] memory TamaGucciOfUser = new uint[](len);
@@ -114,6 +116,14 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
       TamaGucciOfUser[i] = (super.tokenOfOwnerByIndex(_user,i));
     }
     return TamaGucciOfUser;
+  }
+
+  function getInventoryOfTamaGucci(uint256 _tamagucciID) public view returns (object[] memory){
+    object[] memory InventoryOfTamaGucci = new object[](objectTypeCount);
+    for(uint i = 0; i < objectTypeCount ; i++){
+      InventoryOfTamaGucci[i] = (tamagucciInventory[_tamagucciID][i]);
+    }
+    return InventoryOfTamaGucci;
   }
 
   function getAllType() public view returns (tamaGucciType[] memory){
@@ -131,11 +141,8 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
     }
     return allType;
   }
-  
+
   function getPriceOfID(uint256 _id) public view returns (uint256){
     return tamagucciById[_id]._type._price;
   }
-
-
-  
 }
