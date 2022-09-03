@@ -214,6 +214,46 @@
       "address": "0x09635F643e140090A9A8Dcd712eD6285858ceBef",
       "txHash": "0x6e3c987f63ef9a467eca4e3f80e3b31bc3be8a2045bf0e5a79fd91015cf32460",
       "kind": "transparent"
+    },
+    {
+      "address": "0x5f3f1dBD7B74C6B46e8c44f98792A1dAf8d69154",
+      "txHash": "0x724be719fd5b361115d92b6fc749329c8a86284a6706b91b8a731ade3ed7dbf5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xb7278A61aa25c888815aFC32Ad3cC52fF24fE575",
+      "txHash": "0x47c127b1a3531945db76e9c64ccc1eaec657fe9f12129fd6e4808a87edf9dcf4",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x21dF544947ba3E8b3c32561399E88B52Dc8b2823",
+      "txHash": "0xf4ae423317de05f4faeda8768f1c7aede831c9714aecfab949f6593b355537a5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x2E2Ed0Cfd3AD2f1d34481277b3204d807Ca2F8c2",
+      "txHash": "0x15393d293c2889b29015a7d8c1cefcc97ee36f1e782e587e1dbfd2d4972420a1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xAA292E8611aDF267e563f334Ee42320aC96D0463",
+      "txHash": "0xde10e1495a2add9aaa1423385042d09558aca596586311962b88d6c4ca236fb1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x5c74c94173F05dA1720953407cbb920F3DF9f887",
+      "txHash": "0xc99f439c2caf46907c10ef07b45b683a12d44538a9b5ae12e6ded6448d05dc65",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xE3011A37A904aB90C8881a99BD1F6E21401f1522",
+      "txHash": "0xdeba10dd0b47d74a1efc518cd4e81bda0604b318237e024f3f66341d2b850d86",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1f10F3Ba7ACB61b2F50B9d6DdCf91a6f787C0E82",
+      "txHash": "0x4eeca3df211379f1d899599133fd5c8318d4ff220b69354dfeeece817f1970f5",
+      "kind": "transparent"
     }
   ],
   "impls": {
@@ -1282,6 +1322,1299 @@
               }
             ],
             "numberOfBytes": "320"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "b9f53b31aad0fce8a1a621ae4dfb73dfecdfbc4f57f00e3c33aed9e42a392371": {
+      "address": "0x1291Be112d480055DaFd8a610b7d1e203891C274",
+      "txHash": "0xfd24203bf2349a0256af4d2a4a5e8591e8e0faf1b60cbeffffb4fc14b5b11d02",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC165Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_string_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:25"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_string_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:28"
+          },
+          {
+            "label": "_owners",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:31"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:34"
+          },
+          {
+            "label": "_tokenApprovals",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:37"
+          },
+          {
+            "label": "_operatorApprovals",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_bool))",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:40"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_array(t_uint256)44_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:465"
+          },
+          {
+            "label": "_ownedTokens",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:22"
+          },
+          {
+            "label": "_ownedTokensIndex",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:25"
+          },
+          {
+            "label": "_allTokens",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:28"
+          },
+          {
+            "label": "_allTokensIndex",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:31"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_array(t_uint256)46_storage",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:175"
+          },
+          {
+            "label": "UNAUTHORIZED",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_string_storage",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:8"
+          },
+          {
+            "label": "TamaGucciAuthorized",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:12"
+          },
+          {
+            "label": "TokenAuthorized",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:13"
+          },
+          {
+            "label": "RewardManagerAuthorized",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:14"
+          },
+          {
+            "label": "DevWallet",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:17"
+          },
+          {
+            "label": "TokenAddress",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:21"
+          },
+          {
+            "label": "RewardManagerAddress",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:22"
+          },
+          {
+            "label": "TamaGucciAddress",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:23"
+          },
+          {
+            "label": "Treasury",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:28"
+          },
+          {
+            "label": "TransferPaused",
+            "offset": 20,
+            "slot": "209",
+            "type": "t_bool",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:40"
+          },
+          {
+            "label": "tamagucciById",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:42"
+          },
+          {
+            "label": "tamagucciInventory",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:43"
+          },
+          {
+            "label": "objectTypeByID",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_uint256,t_struct(objectType)3681_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:46"
+          },
+          {
+            "label": "objectTypeCount",
+            "offset": 0,
+            "slot": "213",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:47"
+          },
+          {
+            "label": "tamaGucciTypeById",
+            "offset": 0,
+            "slot": "214",
+            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:49"
+          },
+          {
+            "label": "typeCount",
+            "offset": 0,
+            "slot": "215",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:50"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)44_storage": {
+            "label": "uint256[44]",
+            "numberOfBytes": "1408"
+          },
+          "t_array(t_uint256)46_storage": {
+            "label": "uint256[46]",
+            "numberOfBytes": "1472"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+            "label": "mapping(address => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))": {
+            "label": "mapping(uint256 => mapping(uint256 => struct TamaGucci.object))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(object)3687_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.object)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(objectType)3681_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.objectType)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.tamaGucciType)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.tamagucci)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(object)3687_storage": {
+            "label": "struct TamaGucci.object",
+            "members": [
+              {
+                "label": "_type",
+                "type": "t_struct(objectType)3681_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_color",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(objectType)3681_storage": {
+            "label": "struct TamaGucci.objectType",
+            "members": [
+              {
+                "label": "_id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_bonus",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(tamaGucciType)3668_storage": {
+            "label": "struct TamaGucci.tamaGucciType",
+            "members": [
+              {
+                "label": "_id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_species",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(tamagucci)3674_storage": {
+            "label": "struct TamaGucci.tamagucci",
+            "members": [
+              {
+                "label": "_type",
+                "type": "t_struct(tamaGucciType)3668_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "79b48bfb9dd026d8c93a4caf16bcbbd6306b8766cc7f8832ca259aec069e5813": {
+      "address": "0xf953b3A269d80e3eB0F2947630Da976B896A8C5b",
+      "txHash": "0xca65ed05b99ccfb843ac4cfafd243e36798c9bad4062b7e85d218e15d3b71477",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC165Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_string_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:25"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_string_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:28"
+          },
+          {
+            "label": "_owners",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:31"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:34"
+          },
+          {
+            "label": "_tokenApprovals",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:37"
+          },
+          {
+            "label": "_operatorApprovals",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_bool))",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:40"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_array(t_uint256)44_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:465"
+          },
+          {
+            "label": "_ownedTokens",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:22"
+          },
+          {
+            "label": "_ownedTokensIndex",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:25"
+          },
+          {
+            "label": "_allTokens",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:28"
+          },
+          {
+            "label": "_allTokensIndex",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:31"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_array(t_uint256)46_storage",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:175"
+          },
+          {
+            "label": "UNAUTHORIZED",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_string_storage",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:8"
+          },
+          {
+            "label": "TamaGucciAuthorized",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:12"
+          },
+          {
+            "label": "TokenAuthorized",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:13"
+          },
+          {
+            "label": "RewardManagerAuthorized",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:14"
+          },
+          {
+            "label": "DevWallet",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:17"
+          },
+          {
+            "label": "TokenAddress",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:21"
+          },
+          {
+            "label": "RewardManagerAddress",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:22"
+          },
+          {
+            "label": "TamaGucciAddress",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:23"
+          },
+          {
+            "label": "Treasury",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:28"
+          },
+          {
+            "label": "TransferPaused",
+            "offset": 20,
+            "slot": "209",
+            "type": "t_bool",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:40"
+          },
+          {
+            "label": "tamagucciById",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:42"
+          },
+          {
+            "label": "tamagucciInventory",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:43"
+          },
+          {
+            "label": "objectTypeByID",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_uint256,t_struct(objectType)3681_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:46"
+          },
+          {
+            "label": "objectTypeCount",
+            "offset": 0,
+            "slot": "213",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:47"
+          },
+          {
+            "label": "tamaGucciTypeById",
+            "offset": 0,
+            "slot": "214",
+            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:49"
+          },
+          {
+            "label": "typeCount",
+            "offset": 0,
+            "slot": "215",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:50"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)44_storage": {
+            "label": "uint256[44]",
+            "numberOfBytes": "1408"
+          },
+          "t_array(t_uint256)46_storage": {
+            "label": "uint256[46]",
+            "numberOfBytes": "1472"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+            "label": "mapping(address => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))": {
+            "label": "mapping(uint256 => mapping(uint256 => struct TamaGucci.object))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(object)3687_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.object)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(objectType)3681_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.objectType)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.tamaGucciType)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.tamagucci)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(object)3687_storage": {
+            "label": "struct TamaGucci.object",
+            "members": [
+              {
+                "label": "_type",
+                "type": "t_struct(objectType)3681_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_color",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(objectType)3681_storage": {
+            "label": "struct TamaGucci.objectType",
+            "members": [
+              {
+                "label": "_id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_bonus",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(tamaGucciType)3668_storage": {
+            "label": "struct TamaGucci.tamaGucciType",
+            "members": [
+              {
+                "label": "_id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_species",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(tamagucci)3674_storage": {
+            "label": "struct TamaGucci.tamagucci",
+            "members": [
+              {
+                "label": "_type",
+                "type": "t_struct(tamaGucciType)3668_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "98d8d6f28c1f99bcb688e1674bbb5ba4c5afa3b414e71078983b4e541d7d765f": {
+      "address": "0xab16A69A5a8c12C732e0DEFF4BE56A70bb64c926",
+      "txHash": "0xf51a2eba98d45217839d01c0fc993ddc0ec60ac3e62c21dc5c693fa648449e54",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ERC165Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol:41"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_string_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:25"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_string_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:28"
+          },
+          {
+            "label": "_owners",
+            "offset": 0,
+            "slot": "103",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:31"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "104",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:34"
+          },
+          {
+            "label": "_tokenApprovals",
+            "offset": 0,
+            "slot": "105",
+            "type": "t_mapping(t_uint256,t_address)",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:37"
+          },
+          {
+            "label": "_operatorApprovals",
+            "offset": 0,
+            "slot": "106",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_bool))",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:40"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "107",
+            "type": "t_array(t_uint256)44_storage",
+            "contract": "ERC721Upgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol:465"
+          },
+          {
+            "label": "_ownedTokens",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_mapping(t_address,t_mapping(t_uint256,t_uint256))",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:22"
+          },
+          {
+            "label": "_ownedTokensIndex",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:25"
+          },
+          {
+            "label": "_allTokens",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:28"
+          },
+          {
+            "label": "_allTokensIndex",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_mapping(t_uint256,t_uint256)",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:31"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_array(t_uint256)46_storage",
+            "contract": "ERC721EnumerableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol:175"
+          },
+          {
+            "label": "UNAUTHORIZED",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_string_storage",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:8"
+          },
+          {
+            "label": "TamaGucciAuthorized",
+            "offset": 0,
+            "slot": "202",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:12"
+          },
+          {
+            "label": "TokenAuthorized",
+            "offset": 0,
+            "slot": "203",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:13"
+          },
+          {
+            "label": "RewardManagerAuthorized",
+            "offset": 0,
+            "slot": "204",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:14"
+          },
+          {
+            "label": "DevWallet",
+            "offset": 0,
+            "slot": "205",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:17"
+          },
+          {
+            "label": "TokenAddress",
+            "offset": 0,
+            "slot": "206",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:21"
+          },
+          {
+            "label": "RewardManagerAddress",
+            "offset": 0,
+            "slot": "207",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:22"
+          },
+          {
+            "label": "TamaGucciAddress",
+            "offset": 0,
+            "slot": "208",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:23"
+          },
+          {
+            "label": "Treasury",
+            "offset": 0,
+            "slot": "209",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControl",
+            "src": "contracts/type/AccessControl.sol:28"
+          },
+          {
+            "label": "TransferPaused",
+            "offset": 20,
+            "slot": "209",
+            "type": "t_bool",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:40"
+          },
+          {
+            "label": "tamagucciById",
+            "offset": 0,
+            "slot": "210",
+            "type": "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:42"
+          },
+          {
+            "label": "tamagucciInventory",
+            "offset": 0,
+            "slot": "211",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:43"
+          },
+          {
+            "label": "objectTypeByID",
+            "offset": 0,
+            "slot": "212",
+            "type": "t_mapping(t_uint256,t_struct(objectType)3681_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:46"
+          },
+          {
+            "label": "objectTypeCount",
+            "offset": 0,
+            "slot": "213",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:47"
+          },
+          {
+            "label": "tamaGucciTypeById",
+            "offset": 0,
+            "slot": "214",
+            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:49"
+          },
+          {
+            "label": "typeCount",
+            "offset": 0,
+            "slot": "215",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:50"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)44_storage": {
+            "label": "uint256[44]",
+            "numberOfBytes": "1408"
+          },
+          "t_array(t_uint256)46_storage": {
+            "label": "uint256[46]",
+            "numberOfBytes": "1472"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_bool))": {
+            "label": "mapping(address => mapping(address => bool))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_uint256,t_uint256))": {
+            "label": "mapping(address => mapping(uint256 => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_address)": {
+            "label": "mapping(uint256 => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))": {
+            "label": "mapping(uint256 => mapping(uint256 => struct TamaGucci.object))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(object)3687_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.object)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(objectType)3681_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.objectType)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.tamaGucciType)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)": {
+            "label": "mapping(uint256 => struct TamaGucci.tamagucci)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_uint256)": {
+            "label": "mapping(uint256 => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(object)3687_storage": {
+            "label": "struct TamaGucci.object",
+            "members": [
+              {
+                "label": "_type",
+                "type": "t_struct(objectType)3681_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_color",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(objectType)3681_storage": {
+            "label": "struct TamaGucci.objectType",
+            "members": [
+              {
+                "label": "_id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_bonus",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(tamaGucciType)3668_storage": {
+            "label": "struct TamaGucci.tamaGucciType",
+            "members": [
+              {
+                "label": "_id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_species",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "_price",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_struct(tamagucci)3674_storage": {
+            "label": "struct TamaGucci.tamagucci",
+            "members": [
+              {
+                "label": "_type",
+                "type": "t_struct(tamaGucciType)3668_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
           },
           "t_uint256": {
             "label": "uint256",

@@ -170,6 +170,16 @@ async createTamaGucciType ( _id, _name, _price ) {
 };
 
   
+async getAllObjectType (  ) {
+    try{
+        let res = await this.Contract.getAllObjectType(  ).call();
+        return res;
+    }catch(err){
+            console.error('[getAllObjectTypeServices] - getAllObjectType' + err);
+        } 
+};
+
+  
 async getAllType (  ) {
     try{
         let res = await this.Contract.getAllType(  ).call();
@@ -186,6 +196,36 @@ async getApproved ( tokenId ) {
         return res;
     }catch(err){
             console.error('[getApprovedServices] - getApproved' + err);
+        } 
+};
+
+  
+async getFullTamaGucci ( _tamagucciID ) {
+    try{
+        let res = await this.Contract.getFullTamaGucci( _tamagucciID ).call();
+        return res;
+    }catch(err){
+            console.error('[getFullTamaGucciServices] - getFullTamaGucci' + err);
+        } 
+};
+
+  
+async getInventoryOfTamaGucci ( _tamagucciID ) {
+    try{
+        let res = await this.Contract.getInventoryOfTamaGucci( _tamagucciID ).call();
+        return res;
+    }catch(err){
+            console.error('[getInventoryOfTamaGucciServices] - getInventoryOfTamaGucci' + err);
+        } 
+};
+
+  
+async getNodeEntityOfTamaGucci ( _tamagucciID ) {
+    try{
+        let res = await this.Contract.getNodeEntityOfTamaGucci( _tamagucciID ).call();
+        return res;
+    }catch(err){
+            console.error('[getNodeEntityOfTamaGucciServices] - getNodeEntityOfTamaGucci' + err);
         } 
 };
 
@@ -262,6 +302,16 @@ async objectTypeByID ( var0 ) {
         return res;
     }catch(err){
             console.error('[objectTypeByIDServices] - objectTypeByID' + err);
+        } 
+};
+
+  
+async objectTypeCount (  ) {
+    try{
+        let res = await this.Contract.objectTypeCount(  ).call();
+        return res;
+    }catch(err){
+            console.error('[objectTypeCountServices] - objectTypeCount' + err);
         } 
 };
 
@@ -431,12 +481,12 @@ async transferFrom ( from, to, tokenId ) {
 };
 
   
-async typeAmount (  ) {
+async typeCount (  ) {
     try{
-        let res = await this.Contract.typeAmount(  ).call();
+        let res = await this.Contract.typeCount(  ).call();
         return res;
     }catch(err){
-            console.error('[typeAmountServices] - typeAmount' + err);
+            console.error('[typeCountServices] - typeCount' + err);
         } 
 };
 

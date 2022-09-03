@@ -58,7 +58,7 @@ async function main() {
   ]
   BuildFiles(addresses);
 
-  hre.ethernal.resetWorkspace("LocalHardHat");
+  await hre.ethernal.resetWorkspace("LocalHardHat");
 
   await hre.ethernal.push({
     name:'TamaGucci',
