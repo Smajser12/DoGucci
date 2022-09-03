@@ -125,6 +125,14 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
     }
     return InventoryOfTamaGucci;
   }
+  function getNodeEntityOfTamaGucci(uint256 _tamagucciID) public view returns (TamaGucciRewardManager.NodeEntity memory){
+
+    return TamaGucciRewardManager(RewardManagerAddress).getNodeByID(_tamagucciID);
+  }
+
+  function getFullTamaGucci(uint256 _tamagucciID) public view returns (tamagucci memory, object[] memory, TamaGucciRewardManager.NodeEntity memory){
+    return (tamagucciById[_tamagucciID],getInventoryOfTamaGucci(_tamagucciID),getNodeEntityOfTamaGucci(_tamagucciID));
+  }
 
   function getAllType() public view returns (tamaGucciType[] memory){
     tamaGucciType[] memory allType = new tamaGucciType[](typeCount);

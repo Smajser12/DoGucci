@@ -45,6 +45,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
         uint256 totalRewardsSinceCreation;
     }
+    
     mapping(uint256 => NodeEntity) public NodeByID;
     mapping(uint256 => NodeType) nodeTypeByID;
 
