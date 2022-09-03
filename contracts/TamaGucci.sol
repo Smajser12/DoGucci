@@ -44,9 +44,10 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   //NFT ID => OBJECT ID => COLOR ID => OBJECT;
 
   mapping(uint256 => objectType) public objectTypeByID;
+  uint256 public objectTypeCount;
 
   mapping(uint256 => tamaGucciType) public tamaGucciTypeById;
-  uint256 public typeAmount;
+  uint256 public typeCount;
 
   function _transfer(
         address from,
@@ -86,7 +87,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   }
   function buySetOfObject(uint256 _tamagucciID,uint256[] memory _objectsID,uint256[] memory _colors) public {
     require(_objectsID.length == _colors.length, "Not the same length");
-    
+
     for(uint256 i = 0; i < _objectsID.length; i++){
       buyObject(_tamagucciID,_objectsID[i],_colors[i]);
     }
@@ -97,13 +98,14 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   function createObjectType(uint256 _objectID, uint256 _price, uint256 _bonus) public onlyDevWalletAuthorized{
     objectType memory newObj = objectType(_objectID,_price,_bonus);
     objectTypeByID[_objectID] = newObj;
+    objectTypeCount++;
   }
 
   function createTamaGucciType(uint256 _id, string memory _name, uint256 _price) public onlyDevWalletAuthorized{
     
     tamaGucciType memory newType = tamaGucciType(_id,_name,_price * 1 ether);
     tamaGucciTypeById[_id] = newType;
-    typeAmount++;
+    typeCount++;
   }
   function getTamaGucciOfUser(address _user) public view returns (uint256[] memory){
     uint256 len = balanceOf(_user);
@@ -115,12 +117,21 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   }
 
   function getAllType() public view returns (tamaGucciType[] memory){
-    tamaGucciType[] memory allType = new tamaGucciType[](typeAmount);
-    for(uint i = 0; i < typeAmount ; i++){
+    tamaGucciType[] memory allType = new tamaGucciType[](typeCount);
+    for(uint i = 0; i < typeCount ; i++){
       allType[i] = tamaGucciTypeById[i];
     }
     return allType;
   }
+
+  function getAllObjectType() public view returns (objectType[] memory){
+    objectType[] memory allType = new objectType[](objectTypeCount);
+    for(uint i = 0; i < objectTypeCount ; i++){
+      allType[i] = objectTypeByID[i];
+    }
+    return allType;
+  }
+  
   function getPriceOfID(uint256 _id) public view returns (uint256){
     return tamagucciById[_id]._type._price;
   }
