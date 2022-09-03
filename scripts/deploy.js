@@ -48,7 +48,6 @@ async function main() {
     await (await tamagucci.createObjectType(1,1000,10)).wait()
     await (await tamagucci.createObjectType(2,1000,10)).wait()
     await (await tamagucci.createObjectType(3,1000,5)).wait()
-    await (await tamagucci.createObjectType(4,1000,5)).wait()
 
 
     const addresses = [

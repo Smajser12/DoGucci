@@ -146,7 +146,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   function getAllObjectType() public view returns (objectType[] memory){
     objectType[] memory allType = new objectType[](objectTypeCount);
     for(uint i = 0; i < objectTypeCount ; i++){
-      allType[i] = objectTypeByID[i];
+      allType[i] = objectTypeByID[i+1];
     }
     return allType;
   }
