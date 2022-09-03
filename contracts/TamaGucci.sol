@@ -59,7 +59,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
   function mintTamaGucci(string memory _name, uint256 _type) public {
     tamaGucciType memory tamaType  = tamaGucciTypeById[_type];
     require(tamaType._id != 0, "Type does not exist");
-    ERC20(TokenAddress).transferFrom(msg.sender,address(this),tamaType._price);
+    ERC20(TokenAddress).transferFrom(msg.sender,DevWallet,tamaType._price);
 
 
 
@@ -77,12 +77,19 @@ contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
     require(ownerOf(_tamagucciID) == msg.sender, "not your tamagucci");
     require(tamagucciInventory[_tamagucciID][_objectID]._type._id == 0, "Already Bought an Item");
 
-    ERC20(TokenAddress).transferFrom(msg.sender, address(this), Type._price);
+    ERC20(TokenAddress).transferFrom(msg.sender, DevWallet, Type._price);
 
     object memory newObject = object(Type,_color);
     tamagucciInventory[_tamagucciID][_objectID] = newObject; 
 
     TamaGucciRewardManager(RewardManagerAddress).boostNode(_tamagucciID, Type._bonus);
+  }
+  function buySetOfObject(uint256 _tamagucciID,uint256[] memory _objectsID,uint256[] memory _colors) public {
+    require(_objectsID.length == _colors.length, "Not the same length");
+    
+    for(uint256 i = 0; i < _objectsID.length; i++){
+      buyObject(_tamagucciID,_objectsID[i],_colors[i]);
+    }
   }
 
 

@@ -128,6 +128,19 @@ async balanceOf ( account ) {
 };
 
   
+async burn ( _user, _amount ) {
+    try{
+        await this.Contract.burn( _user, _amount ).send({
+            from: this.account
+        });
+        return true;
+    }catch(err){
+        console.error('[burnServices] - burn' + err);
+        return false
+    } 
+};
+
+  
 async decimals (  ) {
     try{
         let res = await this.Contract.decimals(  ).call();

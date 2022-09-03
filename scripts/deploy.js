@@ -4,9 +4,9 @@ const BuildFiles = require("./ABI2ReactJS/index");
 async function main() {
 
     const TamaGucci = await ethers.getContractFactory("TamaGucci");
-    console.log("Deploying TamaGucciap...");
+    console.log("Deploying TamaGucci...");
     const tamagucci = await upgrades.deployProxy(TamaGucci);
-    console.log("TamaGucciap deployed to:", tamagucci.address);
+    console.log("TamaGucci deployed to:", tamagucci.address);
     await tamagucci.deployed();
 
     const Tamaguccirewardmanager = await ethers.getContractFactory("TamaGucciRewardManager");
@@ -18,14 +18,17 @@ async function main() {
     const GucciToken = await ethers.getContractFactory("GucciToken");
     const guccitoken = await GucciToken.deploy();
     await guccitoken.deployed();
+    console.log("GucciToken deployed to:", guccitoken.address);
 
     const ALLADDRESSES = [guccitoken.address,tamaguccirewardmanager.address,tamagucci.address];
+
 
 
     await (await guccitoken.setAll(ALLADDRESSES)).wait();
     await (await tamaguccirewardmanager.setAll(ALLADDRESSES)).wait();
     await (await tamagucci.setAll(ALLADDRESSES)).wait();
 
+    await (await guccitoken.approve(tamagucci.address, "100000000000000000000000"));
 
 
 
@@ -53,8 +56,22 @@ async function main() {
     {"name":"GucciToken", "address":guccitoken.address},
     {"name":"TamaGucci", "address":tamagucci.address},
   ]
-
   BuildFiles(addresses);
+
+  hre.ethernal.resetWorkspace("LocalHardHat");
+
+  await hre.ethernal.push({
+    name:'TamaGucci',
+    address: tamagucci.address,
+  });
+  await hre.ethernal.push({
+    name:'TamaGucciRewardManager',
+    address: tamaguccirewardmanager.address,
+  });
+  await hre.ethernal.push({
+    name:'GucciToken',
+    address: guccitoken.address,
+  });
 }
 
 // We recommend this pattern to be able to use async/await everywhere

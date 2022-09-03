@@ -41,7 +41,7 @@ abstract contract TamaGucciAccessControlProxi is TammaInitializable {
         _;
     }
     modifier onlyTamaGucci(){
-        require(msg.sender == DevWallet, UNAUTHORIZED);
+        require(msg.sender == TamaGucciAddress, UNAUTHORIZED);
         _;
     }
     modifier onlyRewardManager(){

@@ -2,401 +2,224 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "txHash": "0x60d68e90b552c9eabfca4ed8deeed8e40ec8389e7d5ccd7ac15c78f57c148ce3"
+    "txHash": "0xe317bc99b98d434e848d786c85995a10101a2fe20067a366b58120d36e121ea8"
   },
   "proxies": [
-    {
-      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-      "txHash": "0x79124270f470311f4defea06bf070606efeb17529c84709d3cb0c2e70237ed57",
-      "kind": "transparent"
-    },
-    {
-      "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
-      "txHash": "0x7b92cc0b44fee22f28eea8e2bf3707ded48b093de03c293c74d3c31326f633ce",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x59b670e9fA9D0A427751Af201D676719a970857b",
-      "txHash": "0xc3ad35732168845ab677fa5db6446443a969799fb7a8ba7240601da0c1a9eeb1",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x4ed7c70F96B99c776995fB64377f0d4aB3B0e1C1",
-      "txHash": "0x892807a859f21ab008d98029173833fe4bf16d362b0d61e97110093cb0685e2d",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x998abeb3E57409262aE5b751f60747921B33613E",
-      "txHash": "0x32072a096a9059ac2813cdc542722f6e11fb770d94cc9bfb313aed300b2a684a",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x70e0bA845a1A0F2DA3359C97E0285013525FFC49",
-      "txHash": "0xcd6b4c95a87f886150eea24e8417529f7aec7ae26e9888b732d21f43dea667d6",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x7bc06c482DEAd17c0e297aFbC32f6e63d3846650",
-      "txHash": "0xfca08afa2c743fe79df53144b987617a9c5e5df1a0f4bd7e46ffcb1be268f0a2",
-      "kind": "transparent"
-    },
-    {
-      "address": "0xc351628EB244ec633d5f21fBD6621e1a683B1181",
-      "txHash": "0xda4e6c5cc420b1f21ae26495fe7738d9ffdd591074d4391af2fae43b0687019b",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x36b58F5C1969B7b6591D752ea6F5486D069010AB",
-      "txHash": "0x3c24ab6b81ce29ab33c79a4e1b2d002aac910d84bb680a95cd9cb6aadf2e7dd3",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x8198f5d8F8CfFE8f9C413d98a0A55aEB8ab9FbB7",
-      "txHash": "0xe2ec99eb95e812c16849ba6d5aa1687ecff7334c54c253bc199c2b27100990ec",
-      "kind": "transparent"
-    },
     {
       "address": "0x4631BCAbD6dF18D94796344963cB60d44a4136b6",
       "txHash": "0x8375f3fdd2f678fc09e2903498eb9e862a50ac393687e41dfbc434aed5d1ec2e",
       "kind": "transparent"
     },
     {
+      "address": "0x70e0bA845a1A0F2DA3359C97E0285013525FFC49",
+      "txHash": "0x5a09ddaa9978ec92119a9f242e3ba2676a7698c4f702a5877df154e31b25830d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7bc06c482DEAd17c0e297aFbC32f6e63d3846650",
+      "txHash": "0xe8fca45f8ea774d876dedf58e34891d06704a5cdc6d8efc477d56954e1c00513",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xc351628EB244ec633d5f21fBD6621e1a683B1181",
+      "txHash": "0xe7373e5625f0fe80079dd30475d50cf48293357f3c8c68ea581da5ebf4914ae1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x36b58F5C1969B7b6591D752ea6F5486D069010AB",
+      "txHash": "0x02c98b78918356c34ad971767fc4c93c921620f5a35b987a8c822e8fd1068d88",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x8198f5d8F8CfFE8f9C413d98a0A55aEB8ab9FbB7",
+      "txHash": "0x6241ee86de65b9c1d167ce015db597de6ee40c5902cbf0c9c895d6d493e0a223",
+      "kind": "transparent"
+    },
+    {
       "address": "0x86A2EE8FAf9A840F7a2c64CA3d51209F9A02081D",
-      "txHash": "0x72fa6488c1957d82fa613f5d10bbaf686b34b2ee424eb2eb2e286d22f35575cd",
+      "txHash": "0xb37406abef88baf2b74b6b0c98764c3e667ea3de73e9266528be8ef909de6cd4",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA4899D35897033b927acFCf422bc745916139776",
+      "txHash": "0x9606c1bbc9459c5110e0217108430954dc5cbfa98e0fa8dd3952df285fb99f87",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x22753E4264FDDc6181dc7cce468904A80a363E44",
+      "txHash": "0x98ebbc75271d1c2c48b50ab62e2046fdbc514409ee9bfc9fe340239f3f85a39e",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA7c59f010700930003b33aB25a7a0679C860f29c",
+      "txHash": "0x45ab17f7264527010b5e0dff23483f71b92fcca2f527fb90e9dc00c930eafa32",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xb9bEECD1A582768711dE1EE7B0A1d582D9d72a6C",
+      "txHash": "0x164fa4b2a13cbf8a8c341ada535a97b362be071f82a090cb939bd8c8b12db057",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x8A93d247134d91e0de6f96547cB0204e5BE8e5D8",
+      "txHash": "0x4d0172c826c236195fbdea7bf4cdb7c818581f27dce693bbf17de1a09a6477ab",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x638A246F0Ec8883eF68280293FFE8Cfbabe61B44",
+      "txHash": "0x42747ae5559917b86c7964ed67a049cba4ae6ea86374a6342f888ad8113565ef",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x6C2d83262fF84cBaDb3e416D527403135D757892",
+      "txHash": "0x9f8d57a86976037f9dd7243a0c82fb6d17170d85329cc04c80f52494e5645143",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x66F625B8c4c635af8b74ECe2d7eD0D58b4af3C3d",
+      "txHash": "0x65255c69d35ff61835b4f1d486902fbe8ec07360341a85d669af8518131ba103",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x8bCe54ff8aB45CB075b044AE117b8fD91F9351aB",
+      "txHash": "0x2edaafceb11f6e6e0dc0faf8868dee1102b7edb96dc065a4599f31f858be53b9",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1780bCf4103D3F501463AD3414c7f4b654bb7aFd",
+      "txHash": "0xaaa3192b79288fe397cf48f9fc04d79319c14582f7a21654b07b5d96556c0b5b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x5133BBdfCCa3Eb4F739D599ee4eC45cBCD0E16c5",
+      "txHash": "0x03f1f1149ad4d80c5945172fa581031bde0fb87d34aa2252f58ac48aae4debfe",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xe039608E695D21aB11675EBBA00261A0e750526c",
+      "txHash": "0x118b7cfe8ee6a9e74ec06c2ede06602a71f0c11f8f32ea4418d88a0eaa6a8018",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x071586BA1b380B00B793Cc336fe01106B0BFbE6D",
+      "txHash": "0x1985ea0faa10d59d43367001583596d51ff88bd7b864da1c3dbd48cbd159ec4a",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x8fC8CFB7f7362E44E472c690A6e025B80E406458",
+      "txHash": "0x1c5fa61c5300c08533be00ada1c3e9e8b794ffa73f03b6e584bf55ceecad9daf",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xC7143d5bA86553C06f5730c8dC9f8187a621A8D4",
+      "txHash": "0xa427d830111bbdb593e6cc418a702fdb0511082983a68aa49df13d2367d692f0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xa722bdA6968F50778B973Ae2701e90200C564B49",
+      "txHash": "0x30d4084f61d16cde79516181f1fb7f4f2cb6269425acd0a3ff32c6a57d7125ab",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xc7cDb7A2E5dDa1B7A0E792Fe1ef08ED20A6F56D4",
+      "txHash": "0x5d47424d54642b1273c50671c62b336afda5b05c01de1c63c3cb5c0cc956d8a3",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x3C1Cb427D20F15563aDa8C249E71db76d7183B6c",
+      "txHash": "0x0b0d88721521037df9e761bd22063fa6e2e58b947ee3216a0b84cbdfd2705690",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1343248Cbd4e291C6979e70a138f4c774e902561",
+      "txHash": "0xd74bb3d646e1a706b579094fa60087e3035cd812ecdd39bae23b7a450f1364b1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xE8F7d98bE6722d42F29b50500B0E318EF2be4fc8",
+      "txHash": "0x702fd458b9e5abbd2084f61bba146f667f6b31a6f0fb0a1e37fcc373d5b2384d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xe38b6847E611e942E6c80eD89aE867F522402e80",
+      "txHash": "0x0770a6d3a4294d43aab5e8bbabbf46e1c316880671fa482d500daa7c181eda88",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1D8D70AD07C8E7E442AD78E4AC0A16f958Eba7F0",
+      "txHash": "0xa56425c957652bf54211b912c92230163a2c0bc465061944887407cdd343ec04",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA9e6Bfa2BF53dE88FEb19761D9b2eE2e821bF1Bf",
+      "txHash": "0x2688a93140b3b5231c533955a11b31578e5d4d0a5e9a962fbbd8bdd6c29e7c9f",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x9849832a1d8274aaeDb1112ad9686413461e7101",
+      "txHash": "0x4e363077e6a4098a52d54d379f254799dc9a5a5709269220822c5de0d33dd9df",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xa4E00CB342B36eC9fDc4B50b3d527c3643D4C49e",
+      "txHash": "0xca60fcc8d6eb83a79058506b70c465cffe04ef98b0c843aa3642fa3fd61dceae",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x00CAC06Dd0BB4103f8b62D280fE9BCEE8f26fD59",
+      "txHash": "0x41ce242d4605e959b6b39b01cb49bd656671f8dc633e0b34ff361ef2f5befdd7",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4951A1C579039EbfCBA0BE33D2cd3A6D30b0f802",
+      "txHash": "0x323a15d53bc358f547b2f6d7d743a952ae764c03b1025fadad352ac2b02a9651",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x59b670e9fA9D0A427751Af201D676719a970857b",
+      "txHash": "0x085f9cb1721daf420adbc76c835c0b3e81c705824131992f41f8b460f0ef9599",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4ed7c70F96B99c776995fB64377f0d4aB3B0e1C1",
+      "txHash": "0x53c4f69f5f4109fc40275ffe31faaa2a696d5470b9ad3e7c49fa4b3ac4f28ae9",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x998abeb3E57409262aE5b751f60747921B33613E",
+      "txHash": "0x4c23e5a3f2d9a42d044b64058134702ce5b110914e1ee741632bb056dfd062fb",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4826533B4897376654Bb4d4AD88B7faFD0C98528",
+      "txHash": "0x2b99d3aa6101c1b8e7c2b7a2c9475c2b2b5526c374d0e2b012fdc1c0283f7971",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      "txHash": "0x96afa4726edad2a00ff893004885db9192d7f26a97d2868bd167061cc470f994",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      "txHash": "0xda87557a26496283d41c9f19eac9bdb4aa172daf7f6dc9263a2c23c19c286ae6",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4A679253410272dd5232B3Ff7cF5dbB88f295319",
+      "txHash": "0xa3f474ba5b6540d62d4624b75f2ec1ce4b1839b4b37c5b6471f56f5c18bb1c13",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x09635F643e140090A9A8Dcd712eD6285858ceBef",
+      "txHash": "0x6e3c987f63ef9a467eca4e3f80e3b31bc3be8a2045bf0e5a79fd91015cf32460",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "a48a428c2e988d3ef8d66d7bfbe4d8d008b638e312089c0fd75336425a2f2268": {
-      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
-      "txHash": "0x68d82739862f90a5486f5a6eafe3bfccca9acd5faa33bb2592264377de80d366",
-      "layout": {
-        "storage": [
-          {
-            "label": "_initialized",
-            "offset": 0,
-            "slot": "0",
-            "type": "t_uint8",
-            "contract": "TammaInitializable",
-            "src": "contracts/utils/Initializable.sol:62",
-            "retypedFrom": "bool"
-          },
-          {
-            "label": "_initializing",
-            "offset": 1,
-            "slot": "0",
-            "type": "t_bool",
-            "contract": "TammaInitializable",
-            "src": "contracts/utils/Initializable.sol:67"
-          },
-          {
-            "label": "UNAUTHORIZED",
-            "offset": 0,
-            "slot": "1",
-            "type": "t_string_storage",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:9"
-          },
-          {
-            "label": "TamaGucciAuthorized",
-            "offset": 0,
-            "slot": "2",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:13"
-          },
-          {
-            "label": "TokenAuthorized",
-            "offset": 0,
-            "slot": "3",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:14"
-          },
-          {
-            "label": "RewardManagerAuthorized",
-            "offset": 0,
-            "slot": "4",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:15"
-          },
-          {
-            "label": "DevWallet",
-            "offset": 0,
-            "slot": "5",
-            "type": "t_address",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:18"
-          },
-          {
-            "label": "TokenAddress",
-            "offset": 0,
-            "slot": "6",
-            "type": "t_address",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:22"
-          },
-          {
-            "label": "RewardManagerAddress",
-            "offset": 0,
-            "slot": "7",
-            "type": "t_address",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:23"
-          },
-          {
-            "label": "TamaGucciAddress",
-            "offset": 0,
-            "slot": "8",
-            "type": "t_address",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:24"
-          },
-          {
-            "label": "Treasury",
-            "offset": 0,
-            "slot": "9",
-            "type": "t_address",
-            "contract": "TamaGucciAccessControlProxi",
-            "src": "contracts/type/AccessControlProxi.sol:29"
-          },
-          {
-            "label": "NodeByID",
-            "offset": 0,
-            "slot": "10",
-            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4214_storage)",
-            "contract": "TammaGucciRewardManager",
-            "src": "contracts/TamaRewardManager.sol:48"
-          },
-          {
-            "label": "nodeTypeByID",
-            "offset": 0,
-            "slot": "11",
-            "type": "t_mapping(t_uint256,t_struct(NodeType)4185_storage)",
-            "contract": "TammaGucciRewardManager",
-            "src": "contracts/TamaRewardManager.sol:49"
-          },
-          {
-            "label": "currencyAuthorized",
-            "offset": 0,
-            "slot": "12",
-            "type": "t_mapping(t_address,t_bool)",
-            "contract": "TammaGucciRewardManager",
-            "src": "contracts/TamaRewardManager.sol:51"
-          },
-          {
-            "label": "totalNodes",
-            "offset": 0,
-            "slot": "13",
-            "type": "t_uint256",
-            "contract": "TammaGucciRewardManager",
-            "src": "contracts/TamaRewardManager.sol:54"
-          },
-          {
-            "label": "maxNodeLevel",
-            "offset": 0,
-            "slot": "14",
-            "type": "t_uint256",
-            "contract": "TammaGucciRewardManager",
-            "src": "contracts/TamaRewardManager.sol:55"
-          }
-        ],
-        "types": {
-          "t_address": {
-            "label": "address",
-            "numberOfBytes": "20"
-          },
-          "t_bool": {
-            "label": "bool",
-            "numberOfBytes": "1"
-          },
-          "t_mapping(t_address,t_bool)": {
-            "label": "mapping(address => bool)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_uint256,t_struct(NodeEntity)4214_storage)": {
-            "label": "mapping(uint256 => struct TammaGucciRewardManager.NodeEntity)",
-            "numberOfBytes": "32"
-          },
-          "t_mapping(t_uint256,t_struct(NodeType)4185_storage)": {
-            "label": "mapping(uint256 => struct TammaGucciRewardManager.NodeType)",
-            "numberOfBytes": "32"
-          },
-          "t_string_storage": {
-            "label": "string",
-            "numberOfBytes": "32"
-          },
-          "t_struct(NodeEntity)4214_storage": {
-            "label": "struct TammaGucciRewardManager.NodeEntity",
-            "members": [
-              {
-                "label": "NodeTypeID",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "0"
-              },
-              {
-                "label": "Id",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "1"
-              },
-              {
-                "label": "creationTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "2"
-              },
-              {
-                "label": "lastFeedTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "3"
-              },
-              {
-                "label": "lastClaimTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "4"
-              },
-              {
-                "label": "lastShitTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "5"
-              },
-              {
-                "label": "level",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "6"
-              },
-              {
-                "label": "currentRewards",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "7"
-              },
-              {
-                "label": "boost",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "8"
-              },
-              {
-                "label": "FeedingTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "9"
-              },
-              {
-                "label": "ShitTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "10"
-              },
-              {
-                "label": "DirtyReduction",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "11"
-              },
-              {
-                "label": "StarvedReduction",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "12"
-              },
-              {
-                "label": "totalRewardsSinceCreation",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "13"
-              }
-            ],
-            "numberOfBytes": "448"
-          },
-          "t_struct(NodeType)4185_storage": {
-            "label": "struct TammaGucciRewardManager.NodeType",
-            "members": [
-              {
-                "label": "Base",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "0"
-              },
-              {
-                "label": "FeedingTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "1"
-              },
-              {
-                "label": "ShitTime",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "2"
-              },
-              {
-                "label": "ReductionWhenDirty",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "3"
-              },
-              {
-                "label": "ReductionWhenStarved",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "4"
-              },
-              {
-                "label": "levelUpPrice",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "5"
-              },
-              {
-                "label": "FeedPrice",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "6"
-              },
-              {
-                "label": "ShitTimeRateLevelUp",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "7"
-              },
-              {
-                "label": "RewardRateLevelUp",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "8"
-              },
-              {
-                "label": "FeedingTimeRateLevelUp",
-                "type": "t_uint256",
-                "offset": 0,
-                "slot": "9"
-              }
-            ],
-            "numberOfBytes": "320"
-          },
-          "t_uint256": {
-            "label": "uint256",
-            "numberOfBytes": "32"
-          },
-          "t_uint8": {
-            "label": "uint8",
-            "numberOfBytes": "1"
-          }
-        }
-      }
-    },
-    "6e68286d3c1d8829df666bf8aa960b164b64fcd13a79d1c61cc665f71dcd2f5b": {
+    "01746032c992b0b57ecd91e3258a9a18c3bad99dcf75e192b699301d59e8dfb1": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x5b2f9efbb9592f8d34cab0268185c3bcc7bf6b90d709c0560eeac70ecf1d29d0",
+      "txHash": "0x109c289983512610e0b0b4fd90fed0525cc9205c96b16971c151c3ce2e8b156c",
       "layout": {
         "storage": [
           {
@@ -606,39 +429,47 @@
             "slot": "209",
             "type": "t_bool",
             "contract": "TamaGucci",
-            "src": "contracts/TamaGucci.sol:42"
+            "src": "contracts/TamaGucci.sol:40"
           },
           {
             "label": "tamagucciById",
             "offset": 0,
             "slot": "210",
-            "type": "t_mapping(t_uint256,t_struct(tamagucci)3836_storage)",
+            "type": "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)",
             "contract": "TamaGucci",
-            "src": "contracts/TamaGucci.sol:44"
+            "src": "contracts/TamaGucci.sol:42"
           },
           {
             "label": "tamagucciInventory",
             "offset": 0,
             "slot": "211",
-            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3849_storage))",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))",
             "contract": "TamaGucci",
-            "src": "contracts/TamaGucci.sol:45"
+            "src": "contracts/TamaGucci.sol:43"
           },
           {
             "label": "objectTypeByID",
             "offset": 0,
             "slot": "212",
-            "type": "t_mapping(t_uint256,t_struct(objectType)3843_storage)",
+            "type": "t_mapping(t_uint256,t_struct(objectType)3681_storage)",
             "contract": "TamaGucci",
-            "src": "contracts/TamaGucci.sol:48"
+            "src": "contracts/TamaGucci.sol:46"
           },
           {
             "label": "tamaGucciTypeById",
             "offset": 0,
             "slot": "213",
-            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3830_storage)",
+            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)",
             "contract": "TamaGucci",
-            "src": "contracts/TamaGucci.sol:50"
+            "src": "contracts/TamaGucci.sol:48"
+          },
+          {
+            "label": "typeAmount",
+            "offset": 0,
+            "slot": "214",
+            "type": "t_uint256",
+            "contract": "TamaGucci",
+            "src": "contracts/TamaGucci.sol:49"
           }
         ],
         "types": {
@@ -686,23 +517,23 @@
             "label": "mapping(uint256 => address)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3849_storage))": {
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))": {
             "label": "mapping(uint256 => mapping(uint256 => struct TamaGucci.object))",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(object)3849_storage)": {
+          "t_mapping(t_uint256,t_struct(object)3687_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.object)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(objectType)3843_storage)": {
+          "t_mapping(t_uint256,t_struct(objectType)3681_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.objectType)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(tamaGucciType)3830_storage)": {
+          "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.tamaGucciType)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(tamagucci)3836_storage)": {
+          "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.tamagucci)",
             "numberOfBytes": "32"
           },
@@ -714,12 +545,12 @@
             "label": "string",
             "numberOfBytes": "32"
           },
-          "t_struct(object)3849_storage": {
+          "t_struct(object)3687_storage": {
             "label": "struct TamaGucci.object",
             "members": [
               {
                 "label": "_type",
-                "type": "t_struct(objectType)3843_storage",
+                "type": "t_struct(objectType)3681_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -732,7 +563,7 @@
             ],
             "numberOfBytes": "128"
           },
-          "t_struct(objectType)3843_storage": {
+          "t_struct(objectType)3681_storage": {
             "label": "struct TamaGucci.objectType",
             "members": [
               {
@@ -756,7 +587,7 @@
             ],
             "numberOfBytes": "96"
           },
-          "t_struct(tamaGucciType)3830_storage": {
+          "t_struct(tamaGucciType)3668_storage": {
             "label": "struct TamaGucci.tamaGucciType",
             "members": [
               {
@@ -780,12 +611,12 @@
             ],
             "numberOfBytes": "96"
           },
-          "t_struct(tamagucci)3836_storage": {
+          "t_struct(tamagucci)3674_storage": {
             "label": "struct TamaGucci.tamagucci",
             "members": [
               {
                 "label": "_type",
-                "type": "t_struct(tamaGucciType)3830_storage",
+                "type": "t_struct(tamaGucciType)3668_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -797,6 +628,660 @@
               }
             ],
             "numberOfBytes": "128"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "dd303085be2a4a1e669d8ebafcf16084d0cf9c16d9b585d2e1b5291bce1eb373": {
+      "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+      "txHash": "0xbccbf8d5a030495ee03fd6534c19d9e8330edef49e982f02add2e76000c56c67",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "TammaInitializable",
+            "src": "contracts/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "TammaInitializable",
+            "src": "contracts/utils/Initializable.sol:67"
+          },
+          {
+            "label": "UNAUTHORIZED",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:9"
+          },
+          {
+            "label": "TamaGucciAuthorized",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:13"
+          },
+          {
+            "label": "TokenAuthorized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:14"
+          },
+          {
+            "label": "RewardManagerAuthorized",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:15"
+          },
+          {
+            "label": "DevWallet",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:18"
+          },
+          {
+            "label": "TokenAddress",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:22"
+          },
+          {
+            "label": "RewardManagerAddress",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:23"
+          },
+          {
+            "label": "TamaGucciAddress",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:24"
+          },
+          {
+            "label": "Treasury",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:29"
+          },
+          {
+            "label": "NodeByID",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4153_storage)",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:48"
+          },
+          {
+            "label": "nodeTypeByID",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint256,t_struct(NodeType)4124_storage)",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:49"
+          },
+          {
+            "label": "currencyAuthorized",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:51"
+          },
+          {
+            "label": "totalNodes",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:54"
+          },
+          {
+            "label": "maxNodeLevel",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:55"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NodeEntity)4153_storage)": {
+            "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeEntity)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NodeType)4124_storage)": {
+            "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeType)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(NodeEntity)4153_storage": {
+            "label": "struct TamaGucciRewardManager.NodeEntity",
+            "members": [
+              {
+                "label": "NodeTypeID",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "Id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "creationTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastFeedTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "lastClaimTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "lastShitTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "level",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "currentRewards",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "boost",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "FeedingTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "ShitTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "10"
+              },
+              {
+                "label": "DirtyReduction",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "11"
+              },
+              {
+                "label": "StarvedReduction",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "12"
+              },
+              {
+                "label": "totalRewardsSinceCreation",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "13"
+              }
+            ],
+            "numberOfBytes": "448"
+          },
+          "t_struct(NodeType)4124_storage": {
+            "label": "struct TamaGucciRewardManager.NodeType",
+            "members": [
+              {
+                "label": "Base",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "FeedingTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "ShitTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "ReductionWhenDirty",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "ReductionWhenStarved",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "levelUpPrice",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "FeedPrice",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "ShitTimeRateLevelUp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "RewardRateLevelUp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "FeedingTimeRateLevelUp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              }
+            ],
+            "numberOfBytes": "320"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "fa4d3faa24cc517358dc4f94e961312e91e89465dc0bb298a5bf6b189813b217": {
+      "address": "0x7a2088a1bFc9d81c55368AE168C2C02570cB814F",
+      "txHash": "0x66343f4482543c32ce4c46637edcc7f9004f1a2cda7db9eed1e3e04b2d6ec9a6",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "TammaInitializable",
+            "src": "contracts/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "TammaInitializable",
+            "src": "contracts/utils/Initializable.sol:67"
+          },
+          {
+            "label": "UNAUTHORIZED",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:9"
+          },
+          {
+            "label": "TamaGucciAuthorized",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:13"
+          },
+          {
+            "label": "TokenAuthorized",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:14"
+          },
+          {
+            "label": "RewardManagerAuthorized",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:15"
+          },
+          {
+            "label": "DevWallet",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:18"
+          },
+          {
+            "label": "TokenAddress",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:22"
+          },
+          {
+            "label": "RewardManagerAddress",
+            "offset": 0,
+            "slot": "7",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:23"
+          },
+          {
+            "label": "TamaGucciAddress",
+            "offset": 0,
+            "slot": "8",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:24"
+          },
+          {
+            "label": "Treasury",
+            "offset": 0,
+            "slot": "9",
+            "type": "t_address",
+            "contract": "TamaGucciAccessControlProxi",
+            "src": "contracts/type/AccessControlProxi.sol:29"
+          },
+          {
+            "label": "NodeByID",
+            "offset": 0,
+            "slot": "10",
+            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4153_storage)",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:48"
+          },
+          {
+            "label": "nodeTypeByID",
+            "offset": 0,
+            "slot": "11",
+            "type": "t_mapping(t_uint256,t_struct(NodeType)4124_storage)",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:49"
+          },
+          {
+            "label": "currencyAuthorized",
+            "offset": 0,
+            "slot": "12",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:51"
+          },
+          {
+            "label": "totalNodes",
+            "offset": 0,
+            "slot": "13",
+            "type": "t_uint256",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:54"
+          },
+          {
+            "label": "maxNodeLevel",
+            "offset": 0,
+            "slot": "14",
+            "type": "t_uint256",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:55"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NodeEntity)4153_storage)": {
+            "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeEntity)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(NodeType)4124_storage)": {
+            "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeType)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(NodeEntity)4153_storage": {
+            "label": "struct TamaGucciRewardManager.NodeEntity",
+            "members": [
+              {
+                "label": "NodeTypeID",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "Id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "creationTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "lastFeedTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "lastClaimTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "lastShitTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "level",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "currentRewards",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "boost",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "FeedingTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              },
+              {
+                "label": "ShitTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "10"
+              },
+              {
+                "label": "DirtyReduction",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "11"
+              },
+              {
+                "label": "StarvedReduction",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "12"
+              },
+              {
+                "label": "totalRewardsSinceCreation",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "13"
+              }
+            ],
+            "numberOfBytes": "448"
+          },
+          "t_struct(NodeType)4124_storage": {
+            "label": "struct TamaGucciRewardManager.NodeType",
+            "members": [
+              {
+                "label": "Base",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "FeedingTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "ShitTime",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "ReductionWhenDirty",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "ReductionWhenStarved",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "levelUpPrice",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "FeedPrice",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "ShitTimeRateLevelUp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "7"
+              },
+              {
+                "label": "RewardRateLevelUp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "8"
+              },
+              {
+                "label": "FeedingTimeRateLevelUp",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "9"
+              }
+            ],
+            "numberOfBytes": "320"
           },
           "t_uint256": {
             "label": "uint256",

@@ -131,6 +131,19 @@ async buyObject ( _tamagucciID, _objectID, _color ) {
 };
 
   
+async buySetOfObject ( _tamagucciID, _objectsID, _colors ) {
+    try{
+        await this.Contract.buySetOfObject( _tamagucciID, _objectsID, _colors ).send({
+            from: this.account
+        });
+        return true;
+    }catch(err){
+        console.error('[buySetOfObjectServices] - buySetOfObject' + err);
+        return false
+    } 
+};
+
+  
 async createObjectType ( _objectID, _price, _bonus ) {
     try{
         await this.Contract.createObjectType( _objectID, _price, _bonus ).send({
@@ -157,12 +170,32 @@ async createTamaGucciType ( _id, _name, _price ) {
 };
 
   
+async getAllType (  ) {
+    try{
+        let res = await this.Contract.getAllType(  ).call();
+        return res;
+    }catch(err){
+            console.error('[getAllTypeServices] - getAllType' + err);
+        } 
+};
+
+  
 async getApproved ( tokenId ) {
     try{
         let res = await this.Contract.getApproved( tokenId ).call();
         return res;
     }catch(err){
             console.error('[getApprovedServices] - getApproved' + err);
+        } 
+};
+
+  
+async getPriceOfID ( _id ) {
+    try{
+        let res = await this.Contract.getPriceOfID( _id ).call();
+        return res;
+    }catch(err){
+            console.error('[getPriceOfIDServices] - getPriceOfID' + err);
         } 
 };
 
@@ -395,6 +428,16 @@ async transferFrom ( from, to, tokenId ) {
         console.error('[transferFromServices] - transferFrom' + err);
         return false
     } 
+};
+
+  
+async typeAmount (  ) {
+    try{
+        let res = await this.Contract.typeAmount(  ).call();
+        return res;
+    }catch(err){
+            console.error('[typeAmountServices] - typeAmount' + err);
+        } 
 };
 
 }

@@ -216,6 +216,16 @@ async getBlockUntilClog ( _nodeID ) {
 };
 
   
+async getCurrentDailyROI ( _nodeID ) {
+    try{
+        let res = await this.Contract.getCurrentDailyROI( _nodeID ).call();
+        return res;
+    }catch(err){
+            console.error('[getCurrentDailyROIServices] - getCurrentDailyROI' + err);
+        } 
+};
+
+  
 async getCurrentNodeOwner ( _nodeID ) {
     try{
         let res = await this.Contract.getCurrentNodeOwner( _nodeID ).call();

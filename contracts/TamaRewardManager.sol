@@ -239,6 +239,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         require(msg.value == nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
         claimReward(_id);
         NodeByID[_id].lastFeedTime = block.number;
+        NodeByID[_id].boost += 1;
     }
 
     function clearNode(uint256 _id) public {
