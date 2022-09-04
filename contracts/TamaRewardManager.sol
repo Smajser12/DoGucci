@@ -45,7 +45,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
         uint256 totalRewardsSinceCreation;
     }
-    
+
     mapping(uint256 => NodeEntity) public NodeByID;
     mapping(uint256 => NodeType) nodeTypeByID;
 
@@ -76,7 +76,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         lastShitTime: block.timestamp,
         level : 0,
         currentRewards : nodeTypeByID[_nodeTypeID].Base,
-        boost : 0,
+        boost : 100,
         FeedingTime : nodeTypeByID[_nodeTypeID].FeedingTime,
         ShitTime : nodeTypeByID[_nodeTypeID].ShitTime,
         DirtyReduction : nodeTypeByID[_nodeTypeID].ReductionWhenDirty,
@@ -109,7 +109,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getRewardByID(uint256 _ID) public view returns (uint256 TotalReward)
     {
         NodeEntity memory node = getNodeByID(_ID);
-        uint256 DecayAtBlock = node.lastFeedTime + node.FeedingTime;
+        uint256 DecayAtBlock = node.lastFeedTime + (node.FeedingTime);
         uint256 ClogAtBlock = node.lastShitTime + node.ShitTime;
         uint256 currentRewardPerBlock = (node.currentRewards * node.boost) / 100;
         if(block.number > DecayAtBlock && block.number > ClogAtBlock) // ADD STATE VERIF FOR DECAY
@@ -191,7 +191,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         NodeByID[_nodeID].totalRewardsSinceCreation += _reward;
 
         processNode(_nodeID);
-        clearNode(_nodeID);
+        cleanNode(_nodeID);
         GucciToken(TokenAddress).mint(getOwnerOfNode(_nodeID), _reward);
 
         emit NodeClaimed(_nodeID, _reward);
@@ -199,7 +199,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     function getblockUntilDecay(uint256 _ID) public view returns(uint256){
         NodeEntity storage node = NodeByID[_ID];
-        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed");
+        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
         return (node.lastFeedTime + node.FeedingTime) - block.number;
     }
     
@@ -237,13 +237,14 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
 
     function feedNode(uint _id) public payable {
-        require(msg.value == nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
+        require(msg.value >= nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
+        require(NodeByID[_id].lastFeedTime + NodeByID[_id].FeedingTime < block.number, "Already fed");
         claimReward(_id);
         NodeByID[_id].lastFeedTime = block.number;
-        NodeByID[_id].boost += 1;
+        NodeByID[_id].boost += (msg.value / 10**18) / 100;
     }
 
-    function clearNode(uint256 _id) public {
+    function cleanNode(uint256 _id) public {
         require(getOwnerOfNode(_id) == msg.sender, "Not your Node");
         NodeByID[_id].lastShitTime = block.timestamp;
         NodeByID[_id].ShitTime = ((block.timestamp * block.number / block.difficulty + 420) % 24) * 1 minutes;
@@ -279,7 +280,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     //DECAY
     function getIsNodeDecayed(uint256 _nodeID) public view returns (bool){
-        return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime);
+        return (block.timestamp - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime * 7);
     }
     //REPAIR
     //GET
@@ -321,7 +322,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function setCurrencyAuthorized(address _currency,bool _value) public onlyDevWalletAuthorized{
     currencyAuthorized[_currency] = _value;
     }
-    function sendAvaxToPayment() public onlyDevWalletAuthorized{
+    function sendDogeToPayment() public onlyDevWalletAuthorized{
         payable(DevWallet).transfer(address(this).balance);
     }
 }
