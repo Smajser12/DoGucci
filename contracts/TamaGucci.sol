@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "./type/AccessControl.sol";
 
-contract TamaGucci is ERC721EnumerableUpgradeable,TamaGucciAccessControl{
+contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
 
   function initialize() public initializer {
     __ERC721_init("TamaGucci", "TG");

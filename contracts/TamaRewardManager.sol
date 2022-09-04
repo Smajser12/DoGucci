@@ -21,9 +21,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         uint256 levelUpPrice;
         uint256 FeedPrice;
 
-        uint256 ShitTimeRateLevelUp;
         uint256 RewardRateLevelUp;
-        uint256 FeedingTimeRateLevelUp;
     }
 
     struct NodeEntity{
@@ -37,9 +35,9 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
         uint256 level; //Level of Node
         uint256 currentRewards; //Current base token emission of Node (Base + LEVELUP)
-        uint256 boost; //Current Boost of Node (Gucci Belt)
+        uint256 boost; //Current Boost of Node (Gucci Belt) (Feeding)
 
-        uint256 FeedingTime; // Number of Block before the boy is hungry and you need to feed him
+        uint256 FeedingTime; // Number of Block before the boy is hungry and you can Feed Him
         uint256 ShitTime; // Number of Block before the Node is full of SHIT and needs to be Cleaned, it varies after each shit
         uint256 DirtyReduction; // % of reduction
         uint256 StarvedReduction; // % of reduction
@@ -58,7 +56,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     event NodeClaimed(uint _NodeID, uint Amount);
     event PlotClaimed(uint _PlotID, uint Amount);
-    event AllRewardsClaimed(address _User, uint Amount);
 
     function initialize() public initializer{
         maxNodeLevel = 5;
@@ -91,7 +88,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         return newNode.Id;
     }
 
-     function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _shitTimeRateLevelUp,uint256 _rewardRateLevelUp,uint256 _feedingTimeRateLevelUp) public onlyDevWalletAuthorized{
+     function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _rewardRateLevelUp) public onlyDevWalletAuthorized{
         NodeType memory newType = NodeType(
         _rewards,
         _FeedingTime,
@@ -100,9 +97,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         _reductionStarved,
         _levelUpPrice,
         _feedPrice,
-        _shitTimeRateLevelUp,
-        _rewardRateLevelUp,
-        _feedingTimeRateLevelUp
+        _rewardRateLevelUp
         );
         nodeTypeByID[_type] = newType;
     }
@@ -229,9 +224,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         claimReward(_id);
         NodeType memory currentNodeType = nodeTypeByID[NodeByID[_id].NodeTypeID];
         NodeByID[_id].level += 1;
-        NodeByID[_id].ShitTime += currentNodeType.ShitTimeRateLevelUp;
         NodeByID[_id].currentRewards = (NodeByID[_id].currentRewards * currentNodeType.RewardRateLevelUp) / 100;
-        NodeByID[_id].FeedingTime = (NodeByID[_id].FeedingTime * currentNodeType.FeedingTimeRateLevelUp) / 100;
     }
     function boostNode(uint256 _nodeID, uint256 _boost) public onlyTamaGucci{
         NodeByID[_nodeID].boost += _boost;
