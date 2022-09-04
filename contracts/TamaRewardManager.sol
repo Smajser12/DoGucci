@@ -18,10 +18,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         uint256 ReductionWhenDirty;
         uint256 ReductionWhenStarved;
 
-        uint256 levelUpPrice;
         uint256 FeedPrice;
-
-        uint256 RewardRateLevelUp;
     }
 
     struct NodeEntity{
@@ -32,8 +29,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         uint256 lastFeedTime; // => Last Feed Time, si jamais pas Feed 5 fois d'affilés (5J) => DEAD
         uint256 lastClaimTime;
         uint256 lastShitTime; // => Last Cleaning Time, 50% de reduction si pas clean.
-
-        uint256 level; //Level of Node
         uint256 currentRewards; //Current base token emission of Node (Base + LEVELUP)
         uint256 boost; //Current Boost of Node (Gucci Belt) (Feeding)
 
@@ -46,7 +41,8 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
 
     mapping(uint256 => NodeEntity) public NodeByID;
-    mapping(uint256 => NodeType) nodeTypeByID;
+    mapping(uint256 => NodeType) public nodeTypeByID;
+    mapping(uint256 => uint256) public FeedAmountByID;
 
     mapping(address => bool) public currencyAuthorized;
 
@@ -72,7 +68,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         lastFeedTime: block.number,
         lastClaimTime: block.number,
         lastShitTime: block.number,
-        level : 0,
         currentRewards : nodeTypeByID[_nodeTypeID].Base,
         boost : 100,
         FeedingTime : nodeTypeByID[_nodeTypeID].FeedingTime,
@@ -88,16 +83,14 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         return newNode.Id;
     }
 
-     function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _rewardRateLevelUp) public onlyDevWalletAuthorized{
+     function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _feedPrice) public onlyDevWalletAuthorized{
         NodeType memory newType = NodeType(
         _rewards,
         _FeedingTime,
         _shitTime,
         _reductionDirty,
         _reductionStarved,
-        _levelUpPrice,
-        _feedPrice,
-        _rewardRateLevelUp
+        _feedPrice  * 1 ether
         );
         nodeTypeByID[_type] = newType;
     }
@@ -205,10 +198,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         return (node.lastFeedTime + (node.FeedingTime * 7) - block.number);
     }
     
-    function getLevelOfNode(uint256 _nodeID) public view returns(uint256)
-    {
-        return NodeByID[_nodeID].level;
-    }
+
 
     function getCurrentNodeOwner(uint256 _nodeID) public view returns(address)
     {
@@ -219,20 +209,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         NodeByID[_ID].lastClaimTime = block.number;
     }
 
-    //BOOST
-    function levelUpNode(address _currency, uint256 _id) public
-    {
-        require(NodeByID[_id].level < maxNodeLevel, "Level max");
-        require(getOwnerOfNode(_id) == msg.sender, "Not your Node");
-        require(currencyAuthorized[_currency], "Wrong Currency");
-        ERC20(_currency).transferFrom(msg.sender, DevWallet, nodeTypeByID[NodeByID[_id].NodeTypeID].levelUpPrice);
-
-        claimReward(_id);
-        NodeType memory currentNodeType = nodeTypeByID[NodeByID[_id].NodeTypeID];
-        NodeByID[_id].level += 1;
-        NodeByID[_id].currentRewards = (NodeByID[_id].currentRewards * currentNodeType.RewardRateLevelUp) / 100;
-    }
-
     function boostNode(uint256 _nodeID, uint256 _boost) public onlyTamaGucci{
         NodeByID[_nodeID].boost += _boost;
     }
@@ -240,6 +216,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function feedNode(uint _id) public payable {
         require(msg.value == nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
         require(NodeByID[_id].lastFeedTime + NodeByID[_id].FeedingTime < block.number, "Already fed");
+        
         claimReward(_id);
         NodeByID[_id].lastFeedTime = block.number;
         NodeByID[_id].boost += 1;
@@ -279,14 +256,15 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getIsNodeDecayed(uint256 _nodeID) public view returns (bool){
         return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime * 7);
     }
+    function getIsNodeHungry(uint256 _nodeID) public view returns (bool){
+        return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime);
+    }
     //REPAIR
     //GET
     function getMaxLevel() public view returns (uint256){
         return maxNodeLevel;
     }
-    function getLevelUpPriceOfId(uint256 _Id) public view returns (uint256){
-        return nodeTypeByID[NodeByID[_Id].NodeTypeID].levelUpPrice;
-    }
+
     function getNodeTypeByID(uint256 _Id) public view returns(NodeType memory){
         return nodeTypeByID[_Id];
     }
@@ -309,9 +287,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     function setRepairPrice(uint256 _nodeTypeID, uint256 _price) public onlyDevWalletAuthorized{
         nodeTypeByID[_nodeTypeID].FeedPrice = _price;
-    }
-    function setLevelUpPrice(uint256 _nodeTypeID,uint256 _price) public onlyDevWalletAuthorized{
-        nodeTypeByID[_nodeTypeID].levelUpPrice = _price;
     }
     function setMaxLevel(uint256 _level) public onlyDevWalletAuthorized{
         maxNodeLevel = _level;
