@@ -193,10 +193,16 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         emit NodeClaimed(_nodeID, _reward);
     }
 
-    function getblockUntilDecay(uint256 _ID) public view returns(uint256){
+    function getBlockUntilFeedTime(uint256 _ID) public view returns(uint256){
         NodeEntity storage node = NodeByID[_ID];
         require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
         return (node.lastFeedTime + node.FeedingTime) - block.number;
+    }
+
+    function getBlockUntilDecay(uint256 _ID) public view returns(uint256){
+        NodeEntity storage node = NodeByID[_ID];
+        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
+        return (node.lastFeedTime + (node.FeedingTime * 7) - block.number);
     }
     
     function getLevelOfNode(uint256 _nodeID) public view returns(uint256)
@@ -226,6 +232,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         NodeByID[_id].level += 1;
         NodeByID[_id].currentRewards = (NodeByID[_id].currentRewards * currentNodeType.RewardRateLevelUp) / 100;
     }
+
     function boostNode(uint256 _nodeID, uint256 _boost) public onlyTamaGucci{
         NodeByID[_nodeID].boost += _boost;
     }
