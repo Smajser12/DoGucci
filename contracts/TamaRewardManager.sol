@@ -255,8 +255,17 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
 
     function getBlockUntilHungry(uint256 _nodeID) public view returns (uint256){
-        require(NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime >= block.number, "Already decayed (starved)");
+        require(NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime >= block.number, "Already Hungry");
         return (NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime - block.number);
+    }
+    function getPercentFeed(uint256 _nodeID) public view returns (uint256){
+        return 100 - ((NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime * 7 )/ block.number);
+    }
+    function getHungryAtBlock(uint256 _nodeID) public view returns (uint256){
+        return NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime;
+    }
+    function getStarvedAtBlock(uint256 _nodeID) public view returns (uint256){
+        return NodeByID[_nodeID].lastFeedTime +(NodeByID[_nodeID].FeedingTime * 7);
     }
     //REPAIR
     //GET

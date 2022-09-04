@@ -98,7 +98,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
 
   // *** ADMIN ***
   function createObjectType(uint256 _objectID, uint256 _price, uint256 _bonus) public onlyDevWalletAuthorized{
-    objectType memory newObj = objectType(_objectID,_price,_bonus);
+    objectType memory newObj = objectType(_objectID,_price * 1 ether,_bonus);
     objectTypeByID[_objectID] = newObj;
     objectTypeCount++;
   }
