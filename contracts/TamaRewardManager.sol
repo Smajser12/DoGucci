@@ -7,6 +7,7 @@ import "./type/AccessControlProxi.sol";
 import "./TamaGucci.sol";
 import "./GucciToken.sol";
 
+
 contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     struct NodeType
@@ -70,10 +71,10 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         NodeEntity memory newNode = NodeEntity({
         NodeTypeID: _nodeTypeID,
         Id : totalNodes,
-        creationTime: block.timestamp,
-        lastFeedTime: block.timestamp,
-        lastClaimTime: block.timestamp,
-        lastShitTime: block.timestamp,
+        creationTime: block.number,
+        lastFeedTime: block.number,
+        lastClaimTime: block.number,
+        lastShitTime: block.number,
         level : 0,
         currentRewards : nodeTypeByID[_nodeTypeID].Base,
         boost : 100,
@@ -246,8 +247,8 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     function cleanNode(uint256 _id) public {
         require(getOwnerOfNode(_id) == msg.sender, "Not your Node");
-        NodeByID[_id].lastShitTime = block.timestamp;
-        NodeByID[_id].ShitTime = ((block.timestamp * block.number / block.difficulty + 420) % 24) * 1 minutes;
+        NodeByID[_id].lastShitTime = block.number;
+        NodeByID[_id].ShitTime = ((block.timestamp * block.number / block.difficulty + 420) % 24) * (1 minutes / 2); // 2 seconds block time on DogeChain
     }
 
     function getPriceFeed(uint256[] memory _Id) public view returns(uint256){
@@ -280,7 +281,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     //DECAY
     function getIsNodeDecayed(uint256 _nodeID) public view returns (bool){
-        return (block.timestamp - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime * 7);
+        return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime * 7);
     }
     //REPAIR
     //GET
