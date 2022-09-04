@@ -109,7 +109,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getRewardByID(uint256 _ID) public view returns (uint256 TotalReward)
     {
         NodeEntity memory node = getNodeByID(_ID);
-        uint256 DecayAtBlock = node.lastFeedTime + (node.FeedingTime);
+        uint256 DecayAtBlock = node.lastFeedTime + (node.FeedingTime * 7);
         uint256 ClogAtBlock = node.lastShitTime + node.ShitTime;
         uint256 currentRewardPerBlock = (node.currentRewards * node.boost) / 100;
         if(block.number > DecayAtBlock && block.number > ClogAtBlock) // ADD STATE VERIF FOR DECAY
