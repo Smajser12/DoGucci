@@ -48,13 +48,12 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
 
     uint256 public totalNodes;
-    uint256 public maxNodeLevel;
+    uint256 public TVL;
 
     event NodeClaimed(uint _NodeID, uint Amount);
     event PlotClaimed(uint _PlotID, uint Amount);
 
     function initialize() public initializer{
-        maxNodeLevel = 5;
         AccessControledProxiableInitialize();
     }
 
@@ -185,18 +184,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
         emit NodeClaimed(_nodeID, _reward);
     }
-
-    function getBlockUntilFeedTime(uint256 _ID) public view returns(uint256){
-        NodeEntity storage node = NodeByID[_ID];
-        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
-        return (node.lastFeedTime + node.FeedingTime) - block.number;
-    }
-
-    function getBlockUntilDecay(uint256 _ID) public view returns(uint256){
-        NodeEntity storage node = NodeByID[_ID];
-        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
-        return (node.lastFeedTime + (node.FeedingTime * 7) - block.number);
-    }
     
 
 
@@ -216,6 +203,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function feedNode(uint _id) public payable {
         require(msg.value == nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
         require(NodeByID[_id].lastFeedTime + NodeByID[_id].FeedingTime < block.number, "Already fed");
+        TVL += msg.value;
         
         claimReward(_id);
         NodeByID[_id].lastFeedTime = block.number;
@@ -259,11 +247,19 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getIsNodeHungry(uint256 _nodeID) public view returns (bool){
         return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime);
     }
+
+    function getBlockUntilDecay(uint256 _ID) public view returns(uint256){
+        NodeEntity storage node = NodeByID[_ID];
+        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
+        return (node.lastFeedTime + (node.FeedingTime * 7) - block.number);
+    }
+
+    function getBlockUntilHungry(uint256 _nodeID) public view returns (uint256){
+        require(NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime >= block.number, "Already decayed (starved)");
+        return (NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime - block.number);
+    }
     //REPAIR
     //GET
-    function getMaxLevel() public view returns (uint256){
-        return maxNodeLevel;
-    }
 
     function getNodeTypeByID(uint256 _Id) public view returns(NodeType memory){
         return nodeTypeByID[_Id];
@@ -287,9 +283,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     function setRepairPrice(uint256 _nodeTypeID, uint256 _price) public onlyDevWalletAuthorized{
         nodeTypeByID[_nodeTypeID].FeedPrice = _price;
-    }
-    function setMaxLevel(uint256 _level) public onlyDevWalletAuthorized{
-        maxNodeLevel = _level;
     }
     function setCurrencyAuthorized(address _currency,bool _value) public onlyDevWalletAuthorized{
     currencyAuthorized[_currency] = _value;

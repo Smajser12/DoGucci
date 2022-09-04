@@ -41,6 +41,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
 
   mapping(uint256 => tamagucci) public tamagucciById;
   mapping(uint256 => mapping(uint256 => object)) public tamagucciInventory;
+  uint256 public TVL;
   //NFT ID => OBJECT ID => OBJECT;
 
   mapping(uint256 => objectType) public objectTypeByID;
@@ -61,6 +62,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
     tamaGucciType memory tamaType  = tamaGucciTypeById[_type];
     require(tamaType._id != 0, "Type does not exist");
     ERC20(TokenAddress).transferFrom(msg.sender,DevWallet,tamaType._price);
+    TVL += tamaType._price;
 
 
 
