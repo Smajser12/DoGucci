@@ -39,10 +39,10 @@ async function main() {
 
      // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _levelUpPrice,uint256 _feedPrice,uint256 _shitTimeRateLevelUp,uint256 _rewardRateLevelUp,uint256 _feedingTimeRateLevelUp)
 
-    await (await tamaguccirewardmanager.createNodeType(1,360,360,10,50,50,100,10,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(2,360,360,15,50,50,100,10,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(3,360,360,20,50,50,100,10,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(4,360,360,25,50,50,100,10,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(1,360,10,10,50,50,100,10,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(2,360,10,15,50,50,100,10,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(3,360,10,20,50,50,100,10,100)).wait()
+    await (await tamaguccirewardmanager.createNodeType(4,360,10,25,50,50,100,10,100)).wait()
     
 
     await (await tamagucci.createObjectType(1,1000,10)).wait()

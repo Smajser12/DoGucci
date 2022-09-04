@@ -8,12 +8,9 @@ abstract contract Control is Initializable, AccessControlUpgradeable {
 
     bytes32 public constant REWARD_MANAGER_ROLE = keccak256("REWARD_MANAGER_ROLE");
     bytes32 public constant TAMAGUCCI_ROLE = keccak256("TAMAGUCCI_ROLE");
+    bytes32 public constant TOKEN_ROLE = keccak256("TOKEN_ROLE");
+    bytes32 public constant DEV_ROLE = keccak256("TREASURY_ROLE");
 
-
-    /// @custom:oz-upgrades-unsafe-allow constructor
-    constructor() {
-        _disableInitializers();
-    }
 
     function initialize() initializer public {
         __AccessControl_init();

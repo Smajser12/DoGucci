@@ -238,11 +238,11 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
 
     function feedNode(uint _id) public payable {
-        require(msg.value >= nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
+        require(msg.value == nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
         require(NodeByID[_id].lastFeedTime + NodeByID[_id].FeedingTime < block.number, "Already fed");
         claimReward(_id);
         NodeByID[_id].lastFeedTime = block.number;
-        NodeByID[_id].boost += (msg.value / 10**18) / 100;
+        NodeByID[_id].boost += 1;
     }
 
     function cleanNode(uint256 _id) public {
@@ -251,12 +251,8 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         NodeByID[_id].ShitTime = ((block.timestamp * block.number / block.difficulty + 420) % 24) * (1 minutes / 2); // 2 seconds block time on DogeChain
     }
 
-    function getPriceFeed(uint256[] memory _Id) public view returns(uint256){
-        uint256 result = 0;
-        for(uint256 i = 0; i < _Id.length; i++){
-            result += nodeTypeByID[NodeByID[_Id[i]].NodeTypeID].FeedPrice;
-        }
-        return result;
+    function getPriceFeed(uint256 _id) public view returns(uint256){
+        return nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice;
     }
 
     function getRewardOfUser(address _user) public view returns (uint256) {
