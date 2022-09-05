@@ -46,7 +46,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     mapping(address => bool) public currencyAuthorized;
 
-
+    uint256 public StarveHungryRatio;
     uint256 public totalNodes;
     uint256 public TVL;
 
@@ -54,6 +54,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     event PlotClaimed(uint _PlotID, uint Amount);
 
     function initialize() public initializer{
+        StarveHungryRatio = 7;
         AccessControledProxiableInitialize();
     }
 
@@ -97,7 +98,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getRewardByID(uint256 _ID) public view returns (uint256 TotalReward)
     {
         NodeEntity memory node = getNodeByID(_ID);
-        uint256 DecayAtBlock = node.lastFeedTime + (node.FeedingTime * 7);
+        uint256 DecayAtBlock = node.lastFeedTime + (node.FeedingTime * StarveHungryRatio);
         uint256 ClogAtBlock = node.lastShitTime + node.ShitTime;
         uint256 currentRewardPerBlock = (node.currentRewards * node.boost) / 100;
         if(block.number > DecayAtBlock && block.number > ClogAtBlock) // ADD STATE VERIF FOR DECAY
@@ -203,11 +204,13 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function feedNode(uint _id) public payable {
         require(msg.value == nodeTypeByID[NodeByID[_id].NodeTypeID].FeedPrice,"Wrong value");
         require(NodeByID[_id].lastFeedTime + NodeByID[_id].FeedingTime < block.number, "Already fed");
+
         TVL += msg.value;
         
         claimReward(_id);
         NodeByID[_id].lastFeedTime = block.number;
         NodeByID[_id].boost += 1;
+        FeedAmountByID[_id] += 1;
     }
 
     function cleanNode(uint256 _id) public {
@@ -242,7 +245,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     //DECAY
     function getIsNodeDecayed(uint256 _nodeID) public view returns (bool){
-        return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime * 7);
+        return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime * StarveHungryRatio);
     }
     function getIsNodeHungry(uint256 _nodeID) public view returns (bool){
         return (block.number - NodeByID[_nodeID].lastFeedTime > NodeByID[_nodeID].FeedingTime);
@@ -250,22 +253,19 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
 
     function getBlockUntilDecay(uint256 _ID) public view returns(uint256){
         NodeEntity storage node = NodeByID[_ID];
-        require(node.lastFeedTime + node.FeedingTime > block.number , "Already decayed (starved)");
-        return (node.lastFeedTime + (node.FeedingTime * 7) - block.number);
+        require(node.lastFeedTime + (node.FeedingTime * StarveHungryRatio) > block.number , "Already decayed (starved)");
+        return (node.lastFeedTime + (node.FeedingTime * StarveHungryRatio) - block.number);
     }
 
     function getBlockUntilHungry(uint256 _nodeID) public view returns (uint256){
         require(NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime >= block.number, "Already Hungry");
         return (NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime - block.number);
     }
-    function getPercentFeed(uint256 _nodeID) public view returns (uint256){
-        
-    }
     function getHungryAtBlock(uint256 _nodeID) public view returns (uint256){
         return NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime;
     }
     function getStarvedAtBlock(uint256 _nodeID) public view returns (uint256){
-        return NodeByID[_nodeID].lastFeedTime + (NodeByID[_nodeID].FeedingTime * 7);
+        return NodeByID[_nodeID].lastFeedTime + (NodeByID[_nodeID].FeedingTime * StarveHungryRatio);
     }
     //REPAIR
     //GET
@@ -280,10 +280,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         return TamaGucci(TamaGucciAddress).ownerOf(_nodeID);
     }
     function getCurrentDailyROI(uint256 _nodeID) public view returns (uint256){
-        return TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID) / (NodeByID[_nodeID].currentRewards * 24 hours / 2);
-    }
-    function getRoiDailyByType() public view returns (uint256[] memory){
-
+        return (getRewardPerBlockOfID(_nodeID) * 43200) / TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID);
     }
     //Sets
 
@@ -298,6 +295,9 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     function setCurrencyAuthorized(address _currency,bool _value) public onlyDevWalletAuthorized{
     currencyAuthorized[_currency] = _value;
+    }
+    function setStarveHungryRatio(uint256 _ratio) public onlyDevWalletAuthorized{
+        StarveHungryRatio = _ratio;
     }
     function sendDogeToPayment() public onlyDevWalletAuthorized{
         payable(DevWallet).transfer(address(this).balance);

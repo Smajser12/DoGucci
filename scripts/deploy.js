@@ -32,17 +32,17 @@ async function main() {
 
 
 
-    await (await tamagucci.createTamaGucciType(1,"Doge",69)).wait()
-    await (await tamagucci.createTamaGucciType(2,"ChadDoge",100)).wait()
-    await (await tamagucci.createTamaGucciType(3,"SnoopDog",420)).wait()
-    await (await tamagucci.createTamaGucciType(4,"TopDog",1000)).wait()
+    await (await tamagucci.createTamaGucciType(1,"Doge",69000000)).wait()
+    await (await tamagucci.createTamaGucciType(2,"ChadDoge",100000000)).wait()
+    await (await tamagucci.createTamaGucciType(3,"ElonDoge",420000000)).wait()
+    await (await tamagucci.createTamaGucciType(4,"SnoopDoge",1000000000)).wait()
 
     // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _feedPrice)
 
-    await (await tamaguccirewardmanager.createNodeType(1,10,10,"100000000000000",25,25,100)).wait()
-    await (await tamaguccirewardmanager.createNodeType(2,10,10,"1000000000000000",20,20,150)).wait()
-    await (await tamaguccirewardmanager.createNodeType(3,10,10,"10000000000000000",15,15,250)).wait()
-    await (await tamaguccirewardmanager.createNodeType(4,10,10,"100000000000000000",10,10,1250)).wait()
+    await (await tamaguccirewardmanager.createNodeType(1,30,100,"1597222200000000000",25,25,1)).wait()
+    await (await tamaguccirewardmanager.createNodeType(2,30,100,"3472222222222222222",20,20,2)).wait()
+    await (await tamaguccirewardmanager.createNodeType(3,30,100,"19444444444444444444",15,15,3)).wait()
+    await (await tamaguccirewardmanager.createNodeType(4,30,100,"53240000000000000000",10,10,4)).wait()
     
 
     await (await tamagucci.createObjectType(1,1000,10)).wait()
@@ -57,7 +57,7 @@ async function main() {
   ]
   BuildFiles(addresses);
 
-  await hre.ethernal.resetWorkspace("LocalHardHat");
+  // await hre.ethernal.resetWorkspace("LocalHardHat");
 
   await hre.ethernal.push({
     name:'TamaGucci',

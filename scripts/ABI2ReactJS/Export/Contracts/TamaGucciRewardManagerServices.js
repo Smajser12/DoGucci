@@ -78,6 +78,16 @@ async RewardManagerAuthorized ( var0 ) {
 };
 
   
+async StarveHungryRatio (  ) {
+    try{
+        let res = await this.Contract.StarveHungryRatio(  ).call();
+        return res;
+    }catch(err){
+            console.error('[StarveHungryRatioServices] - StarveHungryRatio' + err);
+        } 
+};
+
+  
 async TVL (  ) {
     try{
         let res = await this.Contract.TVL(  ).call();
@@ -342,16 +352,6 @@ async getOwnerOfNode ( _nodeID ) {
         return res;
     }catch(err){
             console.error('[getOwnerOfNodeServices] - getOwnerOfNode' + err);
-        } 
-};
-
-  
-async getPercentFeed ( _nodeID ) {
-    try{
-        let res = await this.Contract.getPercentFeed( _nodeID ).call();
-        return res;
-    }catch(err){
-            console.error('[getPercentFeedServices] - getPercentFeed' + err);
         } 
 };
 

@@ -7,12 +7,11 @@ require('@openzeppelin/hardhat-upgrades');
 module.exports = {
   networks: {
     hardhat: {
-      chainId: 999,
-      mining: {
-        auto: false,
-        interval: 5000
-      }
-
+      // chainId: 999,
+      // mining: {
+      //   auto: false,
+      //   interval: 5000
+      // }
     },
     dogetest: {
       url: 'https://rpc-testnet.dogechain.dog',
@@ -21,6 +20,7 @@ module.exports = {
     },
     dogechain:{
       url: 'https://rpc.dogechain.dog',
+      chainId:2000,
       accounts: [process.env.FUJI_ACCOUNT]
     }
   },
