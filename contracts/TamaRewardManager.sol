@@ -259,13 +259,13 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         return (NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime - block.number);
     }
     function getPercentFeed(uint256 _nodeID) public view returns (uint256){
-        return 100 - ((NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime * 7 )/ block.number);
+        
     }
     function getHungryAtBlock(uint256 _nodeID) public view returns (uint256){
         return NodeByID[_nodeID].lastFeedTime + NodeByID[_nodeID].FeedingTime;
     }
     function getStarvedAtBlock(uint256 _nodeID) public view returns (uint256){
-        return NodeByID[_nodeID].lastFeedTime +(NodeByID[_nodeID].FeedingTime * 7);
+        return NodeByID[_nodeID].lastFeedTime + (NodeByID[_nodeID].FeedingTime * 7);
     }
     //REPAIR
     //GET
@@ -281,6 +281,9 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     function getCurrentDailyROI(uint256 _nodeID) public view returns (uint256){
         return TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID) / (NodeByID[_nodeID].currentRewards * 24 hours / 2);
+    }
+    function getRoiDailyByType() public view returns (uint256[] memory){
+
     }
     //Sets
 

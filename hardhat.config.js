@@ -7,6 +7,11 @@ require('@openzeppelin/hardhat-upgrades');
 module.exports = {
   networks: {
     hardhat: {
+      mining: {
+        auto: false,
+        interval: 5000
+      }
+
     },
     dogetest: {
       url: 'https://rpc-testnet.dogechain.dog',

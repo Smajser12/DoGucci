@@ -61,6 +61,7 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
   function mintTamaGucci(string memory _name, uint256 _type) public {
     tamaGucciType memory tamaType  = tamaGucciTypeById[_type];
     require(tamaType._id != 0, "Type does not exist");
+    
     ERC20(TokenAddress).transferFrom(msg.sender,DevWallet,tamaType._price);
     TVL += tamaType._price;
 

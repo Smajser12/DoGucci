@@ -45,6 +45,16 @@ async RewardManagerAuthorized ( var0 ) {
 };
 
   
+async TVL (  ) {
+    try{
+        let res = await this.Contract.TVL(  ).call();
+        return res;
+    }catch(err){
+            console.error('[TVLServices] - TVL' + err);
+        } 
+};
+
+  
 async TamaGucciAddress (  ) {
     try{
         let res = await this.Contract.TamaGucciAddress(  ).call();

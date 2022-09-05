@@ -38,6 +38,16 @@ async DevWallet (  ) {
 };
 
   
+async FeedAmountByID ( var0 ) {
+    try{
+        let res = await this.Contract.FeedAmountByID( var0 ).call();
+        return res;
+    }catch(err){
+            console.error('[FeedAmountByIDServices] - FeedAmountByID' + err);
+        } 
+};
+
+  
 async NodeByID ( var0 ) {
     try{
         let res = await this.Contract.NodeByID( var0 ).call();
@@ -64,6 +74,16 @@ async RewardManagerAuthorized ( var0 ) {
         return res;
     }catch(err){
             console.error('[RewardManagerAuthorizedServices] - RewardManagerAuthorized' + err);
+        } 
+};
+
+  
+async TVL (  ) {
+    try{
+        let res = await this.Contract.TVL(  ).call();
+        return res;
+    }catch(err){
+            console.error('[TVLServices] - TVL' + err);
         } 
 };
 
@@ -144,14 +164,14 @@ async claimReward ( _nodeID ) {
 };
 
   
-async clearNode ( _id ) {
+async cleanNode ( _id ) {
     try{
-        await this.Contract.clearNode( _id ).send({
+        await this.Contract.cleanNode( _id ).send({
             from: this.account
         });
         return true;
     }catch(err){
-        console.error('[clearNodeServices] - clearNode' + err);
+        console.error('[cleanNodeServices] - cleanNode' + err);
         return false
     } 
 };
@@ -170,9 +190,9 @@ async createNode ( _nodeTypeID ) {
 };
 
   
-async createNodeType ( _type, _FeedingTime, _shitTime, _rewards, _reductionStarved, _reductionDirty, _levelUpPrice, _feedPrice, _shitTimeRateLevelUp, _rewardRateLevelUp, _feedingTimeRateLevelUp ) {
+async createNodeType ( _type, _FeedingTime, _shitTime, _rewards, _reductionStarved, _reductionDirty, _feedPrice ) {
     try{
-        await this.Contract.createNodeType( _type, _FeedingTime, _shitTime, _rewards, _reductionStarved, _reductionDirty, _levelUpPrice, _feedPrice, _shitTimeRateLevelUp, _rewardRateLevelUp, _feedingTimeRateLevelUp ).send({
+        await this.Contract.createNodeType( _type, _FeedingTime, _shitTime, _rewards, _reductionStarved, _reductionDirty, _feedPrice ).send({
             from: this.account
         });
         return true;
@@ -216,6 +236,26 @@ async getBlockUntilClog ( _nodeID ) {
 };
 
   
+async getBlockUntilDecay ( _ID ) {
+    try{
+        let res = await this.Contract.getBlockUntilDecay( _ID ).call();
+        return res;
+    }catch(err){
+            console.error('[getBlockUntilDecayServices] - getBlockUntilDecay' + err);
+        } 
+};
+
+  
+async getBlockUntilHungry ( _nodeID ) {
+    try{
+        let res = await this.Contract.getBlockUntilHungry( _nodeID ).call();
+        return res;
+    }catch(err){
+            console.error('[getBlockUntilHungryServices] - getBlockUntilHungry' + err);
+        } 
+};
+
+  
 async getCurrentDailyROI ( _nodeID ) {
     try{
         let res = await this.Contract.getCurrentDailyROI( _nodeID ).call();
@@ -232,6 +272,16 @@ async getCurrentNodeOwner ( _nodeID ) {
         return res;
     }catch(err){
             console.error('[getCurrentNodeOwnerServices] - getCurrentNodeOwner' + err);
+        } 
+};
+
+  
+async getHungryAtBlock ( _nodeID ) {
+    try{
+        let res = await this.Contract.getHungryAtBlock( _nodeID ).call();
+        return res;
+    }catch(err){
+            console.error('[getHungryAtBlockServices] - getHungryAtBlock' + err);
         } 
 };
 
@@ -256,32 +306,12 @@ async getIsNodeDecayed ( _nodeID ) {
 };
 
   
-async getLevelOfNode ( _nodeID ) {
+async getIsNodeHungry ( _nodeID ) {
     try{
-        let res = await this.Contract.getLevelOfNode( _nodeID ).call();
+        let res = await this.Contract.getIsNodeHungry( _nodeID ).call();
         return res;
     }catch(err){
-            console.error('[getLevelOfNodeServices] - getLevelOfNode' + err);
-        } 
-};
-
-  
-async getLevelUpPriceOfId ( _Id ) {
-    try{
-        let res = await this.Contract.getLevelUpPriceOfId( _Id ).call();
-        return res;
-    }catch(err){
-            console.error('[getLevelUpPriceOfIdServices] - getLevelUpPriceOfId' + err);
-        } 
-};
-
-  
-async getMaxLevel (  ) {
-    try{
-        let res = await this.Contract.getMaxLevel(  ).call();
-        return res;
-    }catch(err){
-            console.error('[getMaxLevelServices] - getMaxLevel' + err);
+            console.error('[getIsNodeHungryServices] - getIsNodeHungry' + err);
         } 
 };
 
@@ -316,9 +346,19 @@ async getOwnerOfNode ( _nodeID ) {
 };
 
   
-async getPriceFeed ( _Id ) {
+async getPercentFeed ( _nodeID ) {
     try{
-        let res = await this.Contract.getPriceFeed( _Id ).call();
+        let res = await this.Contract.getPercentFeed( _nodeID ).call();
+        return res;
+    }catch(err){
+            console.error('[getPercentFeedServices] - getPercentFeed' + err);
+        } 
+};
+
+  
+async getPriceFeed ( _id ) {
+    try{
+        let res = await this.Contract.getPriceFeed( _id ).call();
         return res;
     }catch(err){
             console.error('[getPriceFeedServices] - getPriceFeed' + err);
@@ -356,12 +396,12 @@ async getRewardPerBlockOfID ( _ID ) {
 };
 
   
-async getblockUntilDecay ( _ID ) {
+async getStarvedAtBlock ( _nodeID ) {
     try{
-        let res = await this.Contract.getblockUntilDecay( _ID ).call();
+        let res = await this.Contract.getStarvedAtBlock( _nodeID ).call();
         return res;
     }catch(err){
-            console.error('[getblockUntilDecayServices] - getblockUntilDecay' + err);
+            console.error('[getStarvedAtBlockServices] - getStarvedAtBlock' + err);
         } 
 };
 
@@ -379,37 +419,24 @@ async initialize (  ) {
 };
 
   
-async levelUpNode ( _currency, _id ) {
+async nodeTypeByID ( var0 ) {
     try{
-        await this.Contract.levelUpNode( _currency, _id ).send({
-            from: this.account
-        });
-        return true;
-    }catch(err){
-        console.error('[levelUpNodeServices] - levelUpNode' + err);
-        return false
-    } 
-};
-
-  
-async maxNodeLevel (  ) {
-    try{
-        let res = await this.Contract.maxNodeLevel(  ).call();
+        let res = await this.Contract.nodeTypeByID( var0 ).call();
         return res;
     }catch(err){
-            console.error('[maxNodeLevelServices] - maxNodeLevel' + err);
+            console.error('[nodeTypeByIDServices] - nodeTypeByID' + err);
         } 
 };
 
   
-async sendAvaxToPayment (  ) {
+async sendDogeToPayment (  ) {
     try{
-        await this.Contract.sendAvaxToPayment(  ).send({
+        await this.Contract.sendDogeToPayment(  ).send({
             from: this.account
         });
         return true;
     }catch(err){
-        console.error('[sendAvaxToPaymentServices] - sendAvaxToPayment' + err);
+        console.error('[sendDogeToPaymentServices] - sendDogeToPayment' + err);
         return false
     } 
 };
@@ -449,32 +476,6 @@ async setFeedingTime ( _nodeType, _FeedingTime ) {
         return true;
     }catch(err){
         console.error('[setFeedingTimeServices] - setFeedingTime' + err);
-        return false
-    } 
-};
-
-  
-async setLevelUpPrice ( _nodeTypeID, _price ) {
-    try{
-        await this.Contract.setLevelUpPrice( _nodeTypeID, _price ).send({
-            from: this.account
-        });
-        return true;
-    }catch(err){
-        console.error('[setLevelUpPriceServices] - setLevelUpPrice' + err);
-        return false
-    } 
-};
-
-  
-async setMaxLevel ( _level ) {
-    try{
-        await this.Contract.setMaxLevel( _level ).send({
-            from: this.account
-        });
-        return true;
-    }catch(err){
-        console.error('[setMaxLevelServices] - setMaxLevel' + err);
         return false
     } 
 };
