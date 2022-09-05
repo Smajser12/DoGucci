@@ -396,6 +396,16 @@ async getRewardPerBlockOfID ( _ID ) {
 };
 
   
+async getRoiDailyByType (  ) {
+    try{
+        let res = await this.Contract.getRoiDailyByType(  ).call();
+        return res;
+    }catch(err){
+            console.error('[getRoiDailyByTypeServices] - getRoiDailyByType' + err);
+        } 
+};
+
+  
 async getStarvedAtBlock ( _nodeID ) {
     try{
         let res = await this.Contract.getStarvedAtBlock( _nodeID ).call();

@@ -7,6 +7,7 @@ require('@openzeppelin/hardhat-upgrades');
 module.exports = {
   networks: {
     hardhat: {
+      chainId: 999,
       mining: {
         auto: false,
         interval: 5000
