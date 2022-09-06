@@ -71,5 +71,8 @@ contract DogeSale is Ownable{
     function openWithdraw() public onlyOwner{
         withdrawOpen = true;
     }
+    function getTotalRaised() public view returns (uint256){
+        return address(this).balance;
+    }
 
 }
