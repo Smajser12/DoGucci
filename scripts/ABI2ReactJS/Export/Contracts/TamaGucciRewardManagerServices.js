@@ -396,16 +396,6 @@ async getRewardPerBlockOfID ( _ID ) {
 };
 
   
-async getRoiDailyByType (  ) {
-    try{
-        let res = await this.Contract.getRoiDailyByType(  ).call();
-        return res;
-    }catch(err){
-            console.error('[getRoiDailyByTypeServices] - getRoiDailyByType' + err);
-        } 
-};
-
-  
 async getStarvedAtBlock ( _nodeID ) {
     try{
         let res = await this.Contract.getStarvedAtBlock( _nodeID ).call();
@@ -512,6 +502,19 @@ async setReward ( _nodeType, _reward ) {
         return true;
     }catch(err){
         console.error('[setRewardServices] - setReward' + err);
+        return false
+    } 
+};
+
+  
+async setStarveHungryRatio ( _ratio ) {
+    try{
+        await this.Contract.setStarveHungryRatio( _ratio ).send({
+            from: this.account
+        });
+        return true;
+    }catch(err){
+        console.error('[setStarveHungryRatioServices] - setStarveHungryRatio' + err);
         return false
     } 
 };

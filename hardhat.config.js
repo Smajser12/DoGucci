@@ -32,7 +32,7 @@ module.exports = {
     
     uploadAst: true, // If set to true, plugin will upload AST, and you'll be able to use the storage feature (longer sync time though)
     disabled: false, // If set to true, the plugin will be disabled, nohting will be synced, ethernal.push won't do anything either
-    resetOnStart: "LocalHardHat" // Pass a workspace name to reset it automatically when restarting the node, note that if the workspace doesn't exist it won't error
+    resetOnStart: "" // Pass a workspace name to reset it automatically when restarting the node, note that if the workspace doesn't exist it won't error
   },
 
   solidity: {

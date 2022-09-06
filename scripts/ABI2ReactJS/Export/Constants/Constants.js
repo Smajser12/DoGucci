@@ -1,7 +1,8 @@
-const TamaGucciRewardManager_ADDRESS = '0xce808fd81Aa987AC35eA83b6feF21a5988aBEC3C';
-const GucciToken_ADDRESS = '0xaF84498Dc4138D8F8e5754c5E407b23C3E16AC88';
-const TamaGucci_ADDRESS = '0x3cE8a0B3670AA0560A0795d6cC0226fd8Fd7D081';
+const TamaGucciRewardManager_ADDRESS = '0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9';
+const GucciToken_ADDRESS = '0x5FC8d32690cc91D4c39d9d3abcBD16989F875707';
+const TamaGucci_ADDRESS = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
+const DogeSale_ADDRESS = '0x0165878A594ca255338adfa4d48449f69242Eb8F';
 
 const RPC = 'http://127.0.0.1:8545/';
 
-export {TamaGucciRewardManager_ADDRESS, GucciToken_ADDRESS, TamaGucci_ADDRESS, RPC}
+export {TamaGucciRewardManager_ADDRESS, GucciToken_ADDRESS, TamaGucci_ADDRESS, DogeSale_ADDRESS, RPC}

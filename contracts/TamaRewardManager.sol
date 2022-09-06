@@ -106,7 +106,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
             if(DecayAtBlock > ClogAtBlock)
             {
                 // add before clog
-                TotalReward += (ClogAtBlock - node.lastShitTime) * (currentRewardPerBlock);
+                TotalReward += (ClogAtBlock - node.lastClaimTime) * (currentRewardPerBlock);
                 // add after clog before decays
                  //Clogging
                 TotalReward += (DecayAtBlock - ClogAtBlock) * (currentRewardPerBlock * node.DirtyReduction / 100);
@@ -118,7 +118,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
                 //add before decay (only if it hasn't decay before the last claim Time)
                 if(node.lastShitTime >= DecayAtBlock) 
                 {
-                    TotalReward += (ClogAtBlock - node.lastShitTime) * (currentRewardPerBlock * node.StarvedReduction / 100); //Before clog (already decayed)
+                    TotalReward += (ClogAtBlock - node.lastClaimTime) * (currentRewardPerBlock * node.StarvedReduction / 100); //Before clog (already decayed)
 
                     TotalReward += (block.number - ClogAtBlock) * (currentRewardPerBlock * node.StarvedReduction * node.DirtyReduction / 10000);
                 }
@@ -135,22 +135,22 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         if(block.number > DecayAtBlock)
         {
             //Before
-            if(node.lastShitTime < DecayAtBlock)
+            if(node.lastClaimTime < DecayAtBlock)
             {
                 
-                TotalReward += (DecayAtBlock - node.lastShitTime) * currentRewardPerBlock;
+                TotalReward += (DecayAtBlock - node.lastClaimTime) * currentRewardPerBlock;
             //and After
                 TotalReward += (block.number - DecayAtBlock) * (currentRewardPerBlock * node.StarvedReduction) / 100;
             }
             else{
-                TotalReward += (block.number - node.lastShitTime) * (currentRewardPerBlock * node.StarvedReduction) / 100;
+                TotalReward += (block.number - node.lastClaimTime) * (currentRewardPerBlock * node.StarvedReduction) / 100;
             }
             return TotalReward;
         }
         if(block.number > ClogAtBlock)
         {
             //Before
-            TotalReward += (ClogAtBlock - node.lastShitTime) * currentRewardPerBlock;
+            TotalReward += (ClogAtBlock - node.lastClaimTime) * currentRewardPerBlock;
             //and After
             TotalReward += (block.number - ClogAtBlock) * (currentRewardPerBlock * node.DirtyReduction) / 100;
             return TotalReward;
@@ -162,16 +162,19 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getRewardPerBlockOfID(uint256 _ID) public view returns(uint256)
     {
         NodeEntity storage node = NodeByID[_ID];
-        uint256 blockAmount = block.number - node.lastClaimTime;
         uint256 currentRewardsPerBlock = (node.currentRewards * node.boost) / 100;
-
-        if(blockAmount > node.ShitTime && blockAmount > node.FeedingTime)
-                return (currentRewardsPerBlock * node.StarvedReduction * node.DirtyReduction) / 10000;
-        if(blockAmount > node.FeedingTime){
-            return (currentRewardsPerBlock * node.StarvedReduction) / 100;
+        if(getIsNodeDecayed(_ID) && getIsNodeClogged(_ID))
+        {
+            return currentRewardsPerBlock * node.DirtyReduction * node.StarvedReduction / 10000;
         }
-        if(blockAmount > node.ShitTime)
-            return (currentRewardsPerBlock * node.DirtyReduction) / 100;
+        if(getIsNodeDecayed(_ID))
+        {
+            return currentRewardsPerBlock * node.StarvedReduction / 100;
+        }
+        if(getIsNodeClogged(_ID))
+        {
+            return currentRewardsPerBlock * node.DirtyReduction / 100;
+        }
         return (currentRewardsPerBlock);
     }
 
@@ -280,10 +283,9 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         return TamaGucci(TamaGucciAddress).ownerOf(_nodeID);
     }
     function getCurrentDailyROI(uint256 _nodeID) public view returns (uint256){
-        return (getRewardPerBlockOfID(_nodeID) * 43200) / TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID);
+        return (getRewardPerBlockOfID(_nodeID) * 43200 * 100) / TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID);
     }
     //Sets
-
     function setReward(uint256 _nodeType, uint256 _reward) public onlyDevWalletAuthorized{
         nodeTypeByID[_nodeType].Base = _reward;
     }

@@ -2,17 +2,12 @@
   "manifestVersion": "3.2",
   "admin": {
     "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-    "txHash": "0x142068c8f88e6814e6c081ce243b5ad4e6c0e91d08e5e57b5f7d1991c4307a10"
+    "txHash": "0x0f3a426c5066622c357dcd1a7d126625e2c2a345f53198559aa52cc19022602e"
   },
   "proxies": [
     {
       "address": "0x4631BCAbD6dF18D94796344963cB60d44a4136b6",
       "txHash": "0x8375f3fdd2f678fc09e2903498eb9e862a50ac393687e41dfbc434aed5d1ec2e",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x70e0bA845a1A0F2DA3359C97E0285013525FFC49",
-      "txHash": "0x5a09ddaa9978ec92119a9f242e3ba2676a7698c4f702a5877df154e31b25830d",
       "kind": "transparent"
     },
     {
@@ -181,11 +176,6 @@
       "kind": "transparent"
     },
     {
-      "address": "0x998abeb3E57409262aE5b751f60747921B33613E",
-      "txHash": "0x4c23e5a3f2d9a42d044b64058134702ce5b110914e1ee741632bb056dfd062fb",
-      "kind": "transparent"
-    },
-    {
       "address": "0x4826533B4897376654Bb4d4AD88B7faFD0C98528",
       "txHash": "0x2b99d3aa6101c1b8e7c2b7a2c9475c2b2b5526c374d0e2b012fdc1c0283f7971",
       "kind": "transparent"
@@ -251,13 +241,63 @@
       "kind": "transparent"
     },
     {
+      "address": "0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e",
+      "txHash": "0x16b8fadd7b69f46563e9a17328b639126d94405857de5c4d6116cbd563ff8ec5",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xA51c1fc2f0D1a1b8494Ed1FE312d7C3a78Ed91C0",
+      "txHash": "0x0d8c03bbfff5f3a6bbe3b80074974f622a96cda309cfc4b65f2adbc707e27e3d",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+      "txHash": "0xb49b841269aa3b020ebae055f2c1a9027fe0ffa3d080bcfc7551f0c7af31dfda",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xc6e7DF5E7b4f2A278906862b61205850344D4e7d",
+      "txHash": "0xf433533f165ef2eb241adf430091bcb753f41e787b1b48e2b758d31a2d4dfb39",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x998abeb3E57409262aE5b751f60747921B33613E",
+      "txHash": "0xccf75b34189693013fe22a241e5b68566d2d0fdd852d39e78ccbb74a1f99c4d3",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x70e0bA845a1A0F2DA3359C97E0285013525FFC49",
+      "txHash": "0x6f31d535ed44509fa2b7e0da35d389e50f0179fb795908c27e5908e76076d121",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xcbEAF3BDe82155F56486Fb5a1072cb8baAf547cc",
+      "txHash": "0xdf730650e7d13435156118ff8c943758155096d69388790e316f6c34bed1afda",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1429859428C0aBc9C2C47C8Ee9FBaf82cFA0F20f",
+      "txHash": "0xdf876f3c4c7c689481ddace1281a53fc474f7ee85c72b1daf165ea72a82ba9c0",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4EE6eCAD1c2Dae9f525404De8555724e3c35d07B",
+      "txHash": "0xb3a3de5d3da899a6e3aef2806998a621eb90228e9dd869413ffd80885ac9f764",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xBEc49fA140aCaA83533fB00A2BB19bDdd0290f25",
+      "txHash": "0xd8200da0b0196eac0aafca069f697cec9e615447e7a4db7768f734ae49448b78",
+      "kind": "transparent"
+    },
+    {
       "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
-      "txHash": "0x232966fca12bd555d07b3021586c073d99c92a747b7339e66286e34687b98693",
+      "txHash": "0x765dfbdeb448932763b4af76b1dbd889735688bcd7dcc38ba82f7057a2c4e745",
       "kind": "transparent"
     },
     {
       "address": "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
-      "txHash": "0x97da4879f13f90b3114753523915da39b0d67894f6499fcb7249ab1f8790ca8f",
+      "txHash": "0xff1c7182fd685e54c7af204a4b8e658bbe8e5b5dc54eed61a1565ffcd016fde1",
       "kind": "transparent"
     }
   ],
@@ -1884,7 +1924,7 @@
     },
     "3f9758a815b317f5586716b21814d99f564a305f422933bcb9eb0b3a9559148f": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x95fc39919dff26fb6aac7ca05ec67485b1c58b3eecd9bc02abebaf0a5fb8b3a1",
+      "txHash": "0xdb6d35daa62dfd626f8f56408f4bbdf85a3ea169315300919d7d29e1562bdebb",
       "layout": {
         "storage": [
           {
@@ -2100,7 +2140,7 @@
             "label": "tamagucciById",
             "offset": 0,
             "slot": "210",
-            "type": "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)",
+            "type": "t_mapping(t_uint256,t_struct(tamagucci)3690_storage)",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:42"
           },
@@ -2108,7 +2148,7 @@
             "label": "tamagucciInventory",
             "offset": 0,
             "slot": "211",
-            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3703_storage))",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:43"
           },
@@ -2124,7 +2164,7 @@
             "label": "objectTypeByID",
             "offset": 0,
             "slot": "213",
-            "type": "t_mapping(t_uint256,t_struct(objectType)3681_storage)",
+            "type": "t_mapping(t_uint256,t_struct(objectType)3697_storage)",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:47"
           },
@@ -2140,7 +2180,7 @@
             "label": "tamaGucciTypeById",
             "offset": 0,
             "slot": "215",
-            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)",
+            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3684_storage)",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:50"
           },
@@ -2198,23 +2238,23 @@
             "label": "mapping(uint256 => address)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3687_storage))": {
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3703_storage))": {
             "label": "mapping(uint256 => mapping(uint256 => struct TamaGucci.object))",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(object)3687_storage)": {
+          "t_mapping(t_uint256,t_struct(object)3703_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.object)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(objectType)3681_storage)": {
+          "t_mapping(t_uint256,t_struct(objectType)3697_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.objectType)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(tamaGucciType)3668_storage)": {
+          "t_mapping(t_uint256,t_struct(tamaGucciType)3684_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.tamaGucciType)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(tamagucci)3674_storage)": {
+          "t_mapping(t_uint256,t_struct(tamagucci)3690_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.tamagucci)",
             "numberOfBytes": "32"
           },
@@ -2226,12 +2266,12 @@
             "label": "string",
             "numberOfBytes": "32"
           },
-          "t_struct(object)3687_storage": {
+          "t_struct(object)3703_storage": {
             "label": "struct TamaGucci.object",
             "members": [
               {
                 "label": "_type",
-                "type": "t_struct(objectType)3681_storage",
+                "type": "t_struct(objectType)3697_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -2244,7 +2284,7 @@
             ],
             "numberOfBytes": "128"
           },
-          "t_struct(objectType)3681_storage": {
+          "t_struct(objectType)3697_storage": {
             "label": "struct TamaGucci.objectType",
             "members": [
               {
@@ -2268,7 +2308,7 @@
             ],
             "numberOfBytes": "96"
           },
-          "t_struct(tamaGucciType)3668_storage": {
+          "t_struct(tamaGucciType)3684_storage": {
             "label": "struct TamaGucci.tamaGucciType",
             "members": [
               {
@@ -2292,12 +2332,12 @@
             ],
             "numberOfBytes": "96"
           },
-          "t_struct(tamagucci)3674_storage": {
+          "t_struct(tamagucci)3690_storage": {
             "label": "struct TamaGucci.tamagucci",
             "members": [
               {
                 "label": "_type",
-                "type": "t_struct(tamaGucciType)3668_storage",
+                "type": "t_struct(tamaGucciType)3684_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -2630,9 +2670,9 @@
         }
       }
     },
-    "4c751018e0a96b47e262c64cc2de3030e89aa707080cda832461b9ab02eb97a5": {
+    "d42bc82b19ec70198e507f794601add0178c2efc80325746cc182e3c7d08d6ca": {
       "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
-      "txHash": "0xcd2180a9d6647c741320ca67ba54a11cd55c6842263a93dad9553a835a4b19a9",
+      "txHash": "0x48a732ad89e8c30b79087e6f2f37ba07fcf0130e2c08a4b5bfbe4557750eb6da",
       "layout": {
         "storage": [
           {
@@ -2728,7 +2768,7 @@
             "label": "NodeByID",
             "offset": 0,
             "slot": "10",
-            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4293_storage)",
+            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4309_storage)",
             "contract": "TamaGucciRewardManager",
             "src": "contracts/TamaRewardManager.sol:43"
           },
@@ -2736,7 +2776,7 @@
             "label": "nodeTypeByID",
             "offset": 0,
             "slot": "11",
-            "type": "t_mapping(t_uint256,t_struct(NodeType)4266_storage)",
+            "type": "t_mapping(t_uint256,t_struct(NodeType)4282_storage)",
             "contract": "TamaGucciRewardManager",
             "src": "contracts/TamaRewardManager.sol:44"
           },
@@ -2757,9 +2797,17 @@
             "src": "contracts/TamaRewardManager.sol:47"
           },
           {
-            "label": "totalNodes",
+            "label": "StarveHungryRatio",
             "offset": 0,
             "slot": "14",
+            "type": "t_uint256",
+            "contract": "TamaGucciRewardManager",
+            "src": "contracts/TamaRewardManager.sol:49"
+          },
+          {
+            "label": "totalNodes",
+            "offset": 0,
+            "slot": "15",
             "type": "t_uint256",
             "contract": "TamaGucciRewardManager",
             "src": "contracts/TamaRewardManager.sol:50"
@@ -2767,7 +2815,7 @@
           {
             "label": "TVL",
             "offset": 0,
-            "slot": "15",
+            "slot": "16",
             "type": "t_uint256",
             "contract": "TamaGucciRewardManager",
             "src": "contracts/TamaRewardManager.sol:51"
@@ -2786,11 +2834,11 @@
             "label": "mapping(address => bool)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(NodeEntity)4293_storage)": {
+          "t_mapping(t_uint256,t_struct(NodeEntity)4309_storage)": {
             "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeEntity)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(NodeType)4266_storage)": {
+          "t_mapping(t_uint256,t_struct(NodeType)4282_storage)": {
             "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeType)",
             "numberOfBytes": "32"
           },
@@ -2802,7 +2850,7 @@
             "label": "string",
             "numberOfBytes": "32"
           },
-          "t_struct(NodeEntity)4293_storage": {
+          "t_struct(NodeEntity)4309_storage": {
             "label": "struct TamaGucciRewardManager.NodeEntity",
             "members": [
               {
@@ -2886,7 +2934,7 @@
             ],
             "numberOfBytes": "416"
           },
-          "t_struct(NodeType)4266_storage": {
+          "t_struct(NodeType)4282_storage": {
             "label": "struct TamaGucciRewardManager.NodeType",
             "members": [
               {

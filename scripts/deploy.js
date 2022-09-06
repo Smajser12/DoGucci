@@ -20,6 +20,11 @@ async function main() {
     await guccitoken.deployed();
     console.log("GucciToken deployed to:", guccitoken.address);
 
+    const DogeSale = await ethers.getContractFactory("DogeSale");
+    const dogesale = await DogeSale.deploy(guccitoken.address);
+    await dogesale.deployed();
+    console.log("DogeSale deployed to:", dogesale.address);
+
     const ALLADDRESSES = [guccitoken.address,tamaguccirewardmanager.address,tamagucci.address];
 
 
@@ -28,7 +33,8 @@ async function main() {
     await (await tamaguccirewardmanager.setAll(ALLADDRESSES)).wait();
     await (await tamagucci.setAll(ALLADDRESSES)).wait();
 
-    await (await guccitoken.approve(tamagucci.address, "100000000000000000000000"));
+    await (await guccitoken.approve(tamagucci.address, "100000000000000000000000100000000000000000000000"));
+    await (await guccitoken.approve(dogesale.address, "100000000000000000000000100000000000000000000000"));
 
 
 
@@ -39,21 +45,24 @@ async function main() {
 
     // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _feedPrice)
 
-    await (await tamaguccirewardmanager.createNodeType(1,30,100,"1597222200000000000",25,25,1)).wait()
-    await (await tamaguccirewardmanager.createNodeType(2,30,100,"3472222222222222222",20,20,2)).wait()
-    await (await tamaguccirewardmanager.createNodeType(3,30,100,"19444444444444444444",15,15,3)).wait()
-    await (await tamaguccirewardmanager.createNodeType(4,30,100,"53240000000000000000",10,10,4)).wait()
+    await (await tamaguccirewardmanager.createNodeType(1,30,100,"15972222000000000000",75,75,1)).wait()
+    await (await tamaguccirewardmanager.createNodeType(2,30,100,"34722222222222222220",80,80,2)).wait()
+    await (await tamaguccirewardmanager.createNodeType(3,30,100,"194444444444444444440",85,85,3)).wait()
+    await (await tamaguccirewardmanager.createNodeType(4,30,100,"532400000000000000000",90,90,4)).wait()
     
 
     await (await tamagucci.createObjectType(1,1000,10)).wait()
     await (await tamagucci.createObjectType(2,1000,10)).wait()
     await (await tamagucci.createObjectType(3,1000,5)).wait()
 
+    await (await dogesale.depositToken()).wait()
+
 
     const addresses = [
     {"name":"TamaGucciRewardManager", "address":tamaguccirewardmanager.address},
     {"name":"GucciToken", "address":guccitoken.address},
     {"name":"TamaGucci", "address":tamagucci.address},
+    {"name":"DogeSale", "address":dogesale.address}
   ]
   BuildFiles(addresses);
 
@@ -71,6 +80,9 @@ async function main() {
     name:'GucciToken',
     address: guccitoken.address,
   });
+  await hre.ethernal.push({
+    name:'DogeSale',
+    address: dogesale.address});
 }
 
 // We recommend this pattern to be able to use async/await everywhere
