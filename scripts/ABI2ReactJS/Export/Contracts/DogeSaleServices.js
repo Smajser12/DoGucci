@@ -25,6 +25,16 @@ async MaxAlloc (  ) {
 };
 
   
+async MinAlloc (  ) {
+    try{
+        let res = await this.Contract.MinAlloc(  ).call();
+        return res;
+    }catch(err){
+            console.error('[MinAllocServices] - MinAlloc' + err);
+        } 
+};
+
+  
 async TokenAmount ( var0 ) {
     try{
         let res = await this.Contract.TokenAmount( var0 ).call();
@@ -45,19 +55,9 @@ async TokenByDoge (  ) {
 };
 
   
-async WhiteList ( var0 ) {
+async buyPresale ( , _value ) {
     try{
-        let res = await this.Contract.WhiteList( var0 ).call();
-        return res;
-    }catch(err){
-            console.error('[WhiteListServices] - WhiteList' + err);
-        } 
-};
-
-  
-async buyPresale ( _amount, _value ) {
-    try{
-        await this.Contract.buyPresale( _amount ).send({
+        await this.Contract.buyPresale(  ).send({
             from: this.account, value: _value
         });
         return true;
@@ -107,12 +107,12 @@ async depositToken (  ) {
 };
 
   
-async getAmountOfTokenByAmount ( _dogeAmount ) {
+async getAmountOfTokenByDogeAmount ( _dogeAmount ) {
     try{
-        let res = await this.Contract.getAmountOfTokenByAmount( _dogeAmount ).call();
+        let res = await this.Contract.getAmountOfTokenByDogeAmount( _dogeAmount ).call();
         return res;
     }catch(err){
-            console.error('[getAmountOfTokenByAmountServices] - getAmountOfTokenByAmount' + err);
+            console.error('[getAmountOfTokenByDogeAmountServices] - getAmountOfTokenByDogeAmount' + err);
         } 
 };
 

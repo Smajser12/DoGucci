@@ -23,6 +23,7 @@ contract DogeSale is Ownable{
     uint256 public TokenByDoge = 6666 ;
 
     mapping(address => uint256) public TokenAmount;
+    mapping(address => uint256) public DogeAmount;
 
     function buyPresale() payable public {
         uint256 buyAmount = getAmountOfTokenByDogeAmount(msg.value);
@@ -30,6 +31,7 @@ contract DogeSale is Ownable{
         require(TokenAmount[msg.sender] + buyAmount <= MaxAlloc, "Full");
         require(Supply > buyAmount, "Not enough supply");
         
+        DogeAmount[msg.sender] += msg.value;
         TokenAmount[msg.sender] += buyAmount;
 
         Supply -= buyAmount;

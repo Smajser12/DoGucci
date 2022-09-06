@@ -181,16 +181,6 @@
       "kind": "transparent"
     },
     {
-      "address": "0x4A679253410272dd5232B3Ff7cF5dbB88f295319",
-      "txHash": "0xa3f474ba5b6540d62d4624b75f2ec1ce4b1839b4b37c5b6471f56f5c18bb1c13",
-      "kind": "transparent"
-    },
-    {
-      "address": "0x09635F643e140090A9A8Dcd712eD6285858ceBef",
-      "txHash": "0x6e3c987f63ef9a467eca4e3f80e3b31bc3be8a2045bf0e5a79fd91015cf32460",
-      "kind": "transparent"
-    },
-    {
       "address": "0x5f3f1dBD7B74C6B46e8c44f98792A1dAf8d69154",
       "txHash": "0x724be719fd5b361115d92b6fc749329c8a86284a6706b91b8a731ade3ed7dbf5",
       "kind": "transparent"
@@ -288,6 +278,26 @@
     {
       "address": "0xBEc49fA140aCaA83533fB00A2BB19bDdd0290f25",
       "txHash": "0xd8200da0b0196eac0aafca069f697cec9e615447e7a4db7768f734ae49448b78",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7a2088a1bFc9d81c55368AE168C2C02570cB814F",
+      "txHash": "0x1f9a5085f1945a9038072e519534ba4cecfea18fe10eab4dc69ce0a978caf5a1",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x09635F643e140090A9A8Dcd712eD6285858ceBef",
+      "txHash": "0x307b4b468eae374386408d89114a2646c41c55a696d7324b78953d5e06fb7a50",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xa85233C63b9Ee964Add6F2cffe00Fd84eb32338f",
+      "txHash": "0x805766d8ab7d91c26ad665ba20ac4dca3259a33958af595dd587b46694cf769c",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4A679253410272dd5232B3Ff7cF5dbB88f295319",
+      "txHash": "0x540f867882d9ebf023b7349fa12db3dd61ab3fee18e82198c4d51fadd65e4517",
       "kind": "transparent"
     },
     {
@@ -2140,7 +2150,7 @@
             "label": "tamagucciById",
             "offset": 0,
             "slot": "210",
-            "type": "t_mapping(t_uint256,t_struct(tamagucci)3690_storage)",
+            "type": "t_mapping(t_uint256,t_struct(tamagucci)3688_storage)",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:42"
           },
@@ -2148,7 +2158,7 @@
             "label": "tamagucciInventory",
             "offset": 0,
             "slot": "211",
-            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3703_storage))",
+            "type": "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3701_storage))",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:43"
           },
@@ -2164,7 +2174,7 @@
             "label": "objectTypeByID",
             "offset": 0,
             "slot": "213",
-            "type": "t_mapping(t_uint256,t_struct(objectType)3697_storage)",
+            "type": "t_mapping(t_uint256,t_struct(objectType)3695_storage)",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:47"
           },
@@ -2180,7 +2190,7 @@
             "label": "tamaGucciTypeById",
             "offset": 0,
             "slot": "215",
-            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3684_storage)",
+            "type": "t_mapping(t_uint256,t_struct(tamaGucciType)3682_storage)",
             "contract": "TamaGucci",
             "src": "contracts/TamaGucci.sol:50"
           },
@@ -2238,23 +2248,23 @@
             "label": "mapping(uint256 => address)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3703_storage))": {
+          "t_mapping(t_uint256,t_mapping(t_uint256,t_struct(object)3701_storage))": {
             "label": "mapping(uint256 => mapping(uint256 => struct TamaGucci.object))",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(object)3703_storage)": {
+          "t_mapping(t_uint256,t_struct(object)3701_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.object)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(objectType)3697_storage)": {
+          "t_mapping(t_uint256,t_struct(objectType)3695_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.objectType)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(tamaGucciType)3684_storage)": {
+          "t_mapping(t_uint256,t_struct(tamaGucciType)3682_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.tamaGucciType)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(tamagucci)3690_storage)": {
+          "t_mapping(t_uint256,t_struct(tamagucci)3688_storage)": {
             "label": "mapping(uint256 => struct TamaGucci.tamagucci)",
             "numberOfBytes": "32"
           },
@@ -2266,12 +2276,12 @@
             "label": "string",
             "numberOfBytes": "32"
           },
-          "t_struct(object)3703_storage": {
+          "t_struct(object)3701_storage": {
             "label": "struct TamaGucci.object",
             "members": [
               {
                 "label": "_type",
-                "type": "t_struct(objectType)3697_storage",
+                "type": "t_struct(objectType)3695_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -2284,7 +2294,7 @@
             ],
             "numberOfBytes": "128"
           },
-          "t_struct(objectType)3697_storage": {
+          "t_struct(objectType)3695_storage": {
             "label": "struct TamaGucci.objectType",
             "members": [
               {
@@ -2308,7 +2318,7 @@
             ],
             "numberOfBytes": "96"
           },
-          "t_struct(tamaGucciType)3684_storage": {
+          "t_struct(tamaGucciType)3682_storage": {
             "label": "struct TamaGucci.tamaGucciType",
             "members": [
               {
@@ -2332,12 +2342,12 @@
             ],
             "numberOfBytes": "96"
           },
-          "t_struct(tamagucci)3690_storage": {
+          "t_struct(tamagucci)3688_storage": {
             "label": "struct TamaGucci.tamagucci",
             "members": [
               {
                 "label": "_type",
-                "type": "t_struct(tamaGucciType)3684_storage",
+                "type": "t_struct(tamaGucciType)3682_storage",
                 "offset": 0,
                 "slot": "0"
               },
@@ -2768,7 +2778,7 @@
             "label": "NodeByID",
             "offset": 0,
             "slot": "10",
-            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4309_storage)",
+            "type": "t_mapping(t_uint256,t_struct(NodeEntity)4307_storage)",
             "contract": "TamaGucciRewardManager",
             "src": "contracts/TamaRewardManager.sol:43"
           },
@@ -2776,7 +2786,7 @@
             "label": "nodeTypeByID",
             "offset": 0,
             "slot": "11",
-            "type": "t_mapping(t_uint256,t_struct(NodeType)4282_storage)",
+            "type": "t_mapping(t_uint256,t_struct(NodeType)4280_storage)",
             "contract": "TamaGucciRewardManager",
             "src": "contracts/TamaRewardManager.sol:44"
           },
@@ -2834,11 +2844,11 @@
             "label": "mapping(address => bool)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(NodeEntity)4309_storage)": {
+          "t_mapping(t_uint256,t_struct(NodeEntity)4307_storage)": {
             "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeEntity)",
             "numberOfBytes": "32"
           },
-          "t_mapping(t_uint256,t_struct(NodeType)4282_storage)": {
+          "t_mapping(t_uint256,t_struct(NodeType)4280_storage)": {
             "label": "mapping(uint256 => struct TamaGucciRewardManager.NodeType)",
             "numberOfBytes": "32"
           },
@@ -2850,7 +2860,7 @@
             "label": "string",
             "numberOfBytes": "32"
           },
-          "t_struct(NodeEntity)4309_storage": {
+          "t_struct(NodeEntity)4307_storage": {
             "label": "struct TamaGucciRewardManager.NodeEntity",
             "members": [
               {
@@ -2934,7 +2944,7 @@
             ],
             "numberOfBytes": "416"
           },
-          "t_struct(NodeType)4282_storage": {
+          "t_struct(NodeType)4280_storage": {
             "label": "struct TamaGucciRewardManager.NodeType",
             "members": [
               {
