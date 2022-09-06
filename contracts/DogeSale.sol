@@ -28,7 +28,7 @@ contract DogeSale is Ownable{
     function buyPresale() payable public {
         uint256 buyAmount = getAmountOfTokenByDogeAmount(msg.value);
         require(msg.value > 100 ether , "Value sent too low");
-        require(TokenAmount[msg.sender] + buyAmount <= MaxAlloc, "Full");
+        require(DogeAmount[msg.sender] + msg.value <= MaxAlloc, "Full");
         require(Supply > buyAmount, "Not enough supply");
         
         DogeAmount[msg.sender] += msg.value;
