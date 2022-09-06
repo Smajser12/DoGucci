@@ -15,6 +15,16 @@ export class DogeSale{
 
 
       
+async DogeAmount ( var0 ) {
+    try{
+        let res = await this.Contract.DogeAmount( var0 ).call();
+        return res;
+    }catch(err){
+            console.error('[DogeAmountServices] - DogeAmount' + err);
+        } 
+};
+
+  
 async MaxAlloc (  ) {
     try{
         let res = await this.Contract.MaxAlloc(  ).call();

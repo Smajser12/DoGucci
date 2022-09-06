@@ -27,6 +27,7 @@ contract DogeSale is Ownable{
 
     function buyPresale() payable public {
         uint256 buyAmount = getAmountOfTokenByDogeAmount(msg.value);
+        require(!withdrawOpen, "Withdraw is open");
         require(msg.value >= 100 ether , "Value sent too low");
         require(DogeAmount[msg.sender] + msg.value <= MaxAlloc, "Full");
         require(Supply > buyAmount, "Not enough supply");
@@ -60,6 +61,12 @@ contract DogeSale is Ownable{
 
     function claimPresale() public onlyOwner{
         payable(owner()).transfer(address(this).balance);
+    }
+    function claimUnsoldToken() public onlyOwner{
+        ERC20(GCC).transfer(owner(), ERC20(GCC).balanceOf(address(this)));
+    }
+    function burnUnsoldToken() public onlyOwner{
+        ERC20(GCC).transfer(address(0), ERC20(GCC).balanceOf(address(this)));
     }
     function openWithdraw() public onlyOwner{
         withdrawOpen = true;
