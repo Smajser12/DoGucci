@@ -65,6 +65,19 @@ async TokenByDoge (  ) {
 };
 
   
+async burnUnsoldToken (  ) {
+    try{
+        await this.Contract.burnUnsoldToken(  ).send({
+            from: this.account
+        });
+        return true;
+    }catch(err){
+        console.error('[burnUnsoldTokenServices] - burnUnsoldToken' + err);
+        return false
+    } 
+};
+
+  
 async buyPresale ( , _value ) {
     try{
         await this.Contract.buyPresale(  ).send({
@@ -104,6 +117,19 @@ async claimToken (  ) {
 };
 
   
+async claimUnsoldToken (  ) {
+    try{
+        await this.Contract.claimUnsoldToken(  ).send({
+            from: this.account
+        });
+        return true;
+    }catch(err){
+        console.error('[claimUnsoldTokenServices] - claimUnsoldToken' + err);
+        return false
+    } 
+};
+
+  
 async depositToken (  ) {
     try{
         await this.Contract.depositToken(  ).send({
@@ -133,6 +159,16 @@ async getPriceOfAmount ( _amount ) {
         return res;
     }catch(err){
             console.error('[getPriceOfAmountServices] - getPriceOfAmount' + err);
+        } 
+};
+
+  
+async getTotalRaised (  ) {
+    try{
+        let res = await this.Contract.getTotalRaised(  ).call();
+        return res;
+    }catch(err){
+            console.error('[getTotalRaisedServices] - getTotalRaised' + err);
         } 
 };
 

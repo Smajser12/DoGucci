@@ -18,7 +18,7 @@ contract DogeSale is Ownable{
     address GCC;
     bool public withdrawOpen = false;
     
-    uint256 public MinAlloc = 500 ether;
+    uint256 public MinAlloc = 0.1 ether;
     uint256 public MaxAlloc = 30_000 ether; //In DOGE
     uint256 public TokenByDoge = 6666 ;
 
@@ -28,7 +28,7 @@ contract DogeSale is Ownable{
     function buyPresale() payable public {
         uint256 buyAmount = getAmountOfTokenByDogeAmount(msg.value);
         require(!withdrawOpen, "Withdraw is open");
-        require(msg.value >= 100 ether , "Value sent too low");
+        require(msg.value >= MinAlloc , "Value sent too low");
         require(DogeAmount[msg.sender] + msg.value <= MaxAlloc, "Full");
         require(Supply > buyAmount, "Not enough supply");
         
