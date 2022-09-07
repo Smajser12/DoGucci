@@ -38,17 +38,19 @@ async function main() {
 
 
 
-    await (await tamagucci.createTamaGucciType(1,"Violetchi",69000000)).wait()
-    await (await tamagucci.createTamaGucciType(2,"Mametchi",100000000)).wait()
-    await (await tamagucci.createTamaGucciType(3,"Elon",420000000)).wait()
-    await (await tamagucci.createTamaGucciType(4,"SnoopDoge",1000000000)).wait()
+    await (await tamagucci.createTamaGucciType(1,"Violetchi",6900000)).wait()
+    await (await tamagucci.createTamaGucciType(2,"Mametchi",3000000)).wait()
+    await (await tamagucci.createTamaGucciType(3,"Elon",16666666)).wait()
+    await (await tamagucci.createTamaGucciType(4,"SnoopDoge",69000000)).wait()
 
     // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _feedPrice)
 
-    await (await tamaguccirewardmanager.createNodeType(1,30,100,"15972222000000000000",75,75,1)).wait()
-    await (await tamaguccirewardmanager.createNodeType(2,30,100,"34722222222222222220",80,80,2)).wait()
-    await (await tamaguccirewardmanager.createNodeType(3,30,100,"194444444444444444440",85,85,3)).wait()
-    await (await tamaguccirewardmanager.createNodeType(4,30,100,"532400000000000000000",90,90,4)).wait()
+    
+
+    await (await tamaguccirewardmanager.createNodeType(1,30,100,"69444444444444444",75,75,1)).wait()
+    await (await tamaguccirewardmanager.createNodeType(2,30,100,"104166666666666666",80,80,2)).wait()
+    await (await tamaguccirewardmanager.createNodeType(3,30,100,"771604907407000000",85,85,3)).wait()
+    await (await tamaguccirewardmanager.createNodeType(4,30,100,"3673611111111111111",90,90,4)).wait()
     
 
     await (await tamagucci.createObjectType(1,1000,10)).wait()
