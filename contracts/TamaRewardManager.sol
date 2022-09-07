@@ -94,7 +94,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         _feedPrice  * 1 ether
         );
         nodeTypeByID[_type] = newType;
-        NodeTypeAmount++;
+        NodeTypeCount++;
     }
 
     function getRewardByID(uint256 _ID) public view returns (uint256 TotalReward)
