@@ -49,6 +49,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     uint256 public StarveHungryRatio;
     uint256 public totalNodes;
     uint256 public TVL;
+    uint256 public NodeTypeCount;
 
     event NodeClaimed(uint _NodeID, uint Amount);
     event PlotClaimed(uint _PlotID, uint Amount);
@@ -93,6 +94,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         _feedPrice  * 1 ether
         );
         nodeTypeByID[_type] = newType;
+        NodeTypeAmount++;
     }
 
     function getRewardByID(uint256 _ID) public view returns (uint256 TotalReward)
@@ -269,8 +271,6 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getStarvedAtBlock(uint256 _nodeID) public view returns (uint256){
         return NodeByID[_nodeID].lastFeedTime + (NodeByID[_nodeID].FeedingTime * StarveHungryRatio);
     }
-    //REPAIR
-    //GET
 
     function getNodeTypeByID(uint256 _Id) public view returns(NodeType memory){
         return nodeTypeByID[_Id];
@@ -281,11 +281,13 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     function getOwnerOfNode(uint256 _nodeID) public view returns (address){
         return TamaGucci(TamaGucciAddress).ownerOf(_nodeID);
     }
-    function getCurrentDailyROI(uint256 _nodeID) public view returns (uint256){
-        return (getRewardPerBlockOfID(_nodeID) * 43200 * 100) / TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID);
-    }
-    function getBaseRewardOfNodeType(uint256 _TypeID) public view returns (uint256){
-        return nodeTypeByID[_TypeID].Base;
+    function getAllNodeTypes() public view returns(NodeType[] memory){
+        NodeType[] memory nodeTypes = new NodeType[](NodeTypeCount);
+        for(uint i = 0; i < NodeTypeCount; i++)
+        {
+            nodeTypes[i] = nodeTypeByID[i+1];
+        }
+        return nodeTypes;
     }
     //Sets
     function setReward(uint256 _nodeType, uint256 _reward) public onlyDevWalletAuthorized{
