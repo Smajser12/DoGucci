@@ -236,8 +236,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         }
         return total;
     }
-
-    //CLOG
+    
     function getIsNodeClogged(uint256 _nodeID) public view returns (bool){
        return (block.number - NodeByID[_nodeID].lastShitTime > NodeByID[_nodeID].ShitTime);
     }
