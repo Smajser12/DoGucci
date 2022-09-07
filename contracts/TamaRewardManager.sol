@@ -236,7 +236,7 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
         }
         return total;
     }
-    
+
     function getIsNodeClogged(uint256 _nodeID) public view returns (bool){
        return (block.number - NodeByID[_nodeID].lastShitTime > NodeByID[_nodeID].ShitTime);
     }
@@ -283,6 +283,9 @@ contract TamaGucciRewardManager is TamaGucciAccessControlProxi {
     }
     function getCurrentDailyROI(uint256 _nodeID) public view returns (uint256){
         return (getRewardPerBlockOfID(_nodeID) * 43200 * 100) / TamaGucci(TamaGucciAddress).getPriceOfID(_nodeID);
+    }
+    function getBaseRewardOfNodeType(uint256 _TypeID) public view returns (uint256){
+        return nodeTypeByID[_TypeID].Base;
     }
     //Sets
     function setReward(uint256 _nodeType, uint256 _reward) public onlyDevWalletAuthorized{

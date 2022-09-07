@@ -37,9 +37,6 @@ contract DogeSale is Ownable{
 
         Supply -= buyAmount;
     }
-    function depositToken() public onlyOwner{
-        ERC20(GCC).transferFrom(msg.sender, address(this), Supply);
-    }
 
     function claimToken() public {
         require(withdrawOpen, "Withdraw not open");
@@ -70,6 +67,9 @@ contract DogeSale is Ownable{
     }
     function openWithdraw() public onlyOwner{
         withdrawOpen = true;
+    }
+    function depositToken() public onlyOwner{
+        ERC20(GCC).transferFrom(msg.sender, address(this), Supply);
     }
     function getTotalRaised() public view returns (uint256){
         return address(this).balance;

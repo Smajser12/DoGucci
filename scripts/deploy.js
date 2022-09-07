@@ -38,9 +38,9 @@ async function main() {
 
 
 
-    await (await tamagucci.createTamaGucciType(1,"Doge",69000000)).wait()
-    await (await tamagucci.createTamaGucciType(2,"ChadDoge",100000000)).wait()
-    await (await tamagucci.createTamaGucciType(3,"ElonDoge",420000000)).wait()
+    await (await tamagucci.createTamaGucciType(1,"Violetchi",69000000)).wait()
+    await (await tamagucci.createTamaGucciType(2,"Mametchi",100000000)).wait()
+    await (await tamagucci.createTamaGucciType(3,"Elon",420000000)).wait()
     await (await tamagucci.createTamaGucciType(4,"SnoopDoge",1000000000)).wait()
 
     // function createNodeType(uint256 _type, uint256 _FeedingTime,uint256 _shitTime, uint256 _rewards,uint256 _reductionStarved,uint256 _reductionDirty,uint256 _feedPrice)
@@ -54,6 +54,7 @@ async function main() {
     await (await tamagucci.createObjectType(1,1000,10)).wait()
     await (await tamagucci.createObjectType(2,1000,10)).wait()
     await (await tamagucci.createObjectType(3,1000,5)).wait()
+    await (await tamagucci.createObjectType(4,1000,5)).wait()
 
     await (await dogesale.depositToken()).wait()
 
