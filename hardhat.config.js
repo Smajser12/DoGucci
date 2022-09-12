@@ -22,9 +22,14 @@ module.exports = {
       url: 'https://rpc.dogechain.dog',
       chainId:2000,
       accounts: [process.env.FUJI_ACCOUNT]
+    },
+    fuji: {
+      url: 'https://api.avax-test.network/ext/bc/C/rpc',
+      gasPrice: 40000000000,
+      chainId: 43113,
+      accounts: [process.env.FUJI_ACCOUNT]
     }
   },
-
   ethernal:{
     disableSync: false, // If set to true, plugin will not sync blocks & txs
     disableTrace: false, // If set to true, plugin won't trace transaction

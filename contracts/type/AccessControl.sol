@@ -33,15 +33,15 @@ abstract contract TamaGucciAccessControl {
     /* ========== MODIFIERS ========== */
 
     modifier onlyDevWalletAuthorized(){
-        require(msg.sender == DevWallet, UNAUTHORIZED);
+        require(msg.sender == DevWallet, "UNAUTHORIZED");
         _;
     }
     modifier onlyTamaGucci(){
-        require(msg.sender == DevWallet, UNAUTHORIZED);
+        require(msg.sender == DevWallet, "UNAUTHORIZED");
         _;
     }
     modifier onlyRewardManager(){
-        require(msg.sender == RewardManagerAddress, UNAUTHORIZED);
+        require(msg.sender == RewardManagerAddress, "UNAUTHORIZED");
         _;
     }
     

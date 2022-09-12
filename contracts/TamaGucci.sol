@@ -2,16 +2,21 @@
 pragma solidity ^0.8.0;
 
 import "./TamaRewardManager.sol";
+import "./GucciToken.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "./type/AccessControl.sol";
+import "hardhat/console.sol";
 
 contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
+
+  address public uniswapV2Router;
 
   function initialize() public initializer {
     __ERC721_init("TamaGucci", "TG");
     TransferPaused = true;
     DevWallet = msg.sender;
+    uniswapV2Router = address(0x688d21b0B8Dc35971AF58cFF1F7Bf65639937860);
   }
 
   struct tamaGucciType{
@@ -58,11 +63,13 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
           super._transfer(from,to,tokenId);
   }
 
-  function mintTamaGucci(string memory _name, uint256 _type) public {
+
+  function mintTamaGucci(string memory _name, uint256 _type) payable public {
+    require(msg.value == getWDogePriceOfTamaGucci(_type), "Wrong Value Sent");
+
     tamaGucciType memory tamaType  = tamaGucciTypeById[_type];
     require(tamaType._id != 0, "Type does not exist");
 
-    ERC20(TokenAddress).transferFrom(msg.sender,DevWallet,tamaType._price);
     TVL += tamaType._price;
 
 
@@ -72,6 +79,8 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
 
     tamagucciById[totalSupply()] = newTama;
     _mint(msg.sender, totalSupply());
+
+    addLiqFromTamaGucciBuy(_type);
   }
 
   function buyObject(uint256 _tamagucciID, uint256 _objectID,uint256 _color) public {
@@ -156,5 +165,40 @@ contract TamaGucci is ERC721EnumerableUpgradeable, TamaGucciAccessControl{
 
   function getPriceOfID(uint256 _id) public view returns (uint256){
     return tamagucciById[_id]._type._price;
+  }
+
+  function getWDogePriceOfTamaGucci(uint256 _tamagucciType) public view returns (uint256){
+    return (tamaGucciTypeById[_tamagucciType]._price * 1 ether) / GucciToken(TokenAddress).getPriceOfToken();
+  }
+  function getPriceOfAmount(uint256 _amount) public view returns (uint256){
+    return (_amount * 1 ether) / GucciToken(TokenAddress).getPriceOfToken();
+  }
+
+  function addLiqAmount(uint256 _amount) private{
+    uint256 ethAmount = getPriceOfAmount(_amount);
+
+    ERC20(TokenAddress).approve(uniswapV2Router, _amount);
+
+    IPangolinRouter(uniswapV2Router).addLiquidityAVAX {value: ethAmount} (
+      TokenAddress,
+      _amount,
+      0,
+      0,
+      DevWallet,
+      block.timestamp + 100
+    );
+  }
+  function addLiqFromTamaGucciBuy(uint256 _tamaGucciType) private {
+    uint256 ethAmount = getWDogePriceOfTamaGucci(_tamaGucciType);
+    ERC20(TokenAddress).approve(uniswapV2Router, tamaGucciTypeById[_tamaGucciType]._price);
+
+    IPangolinRouter(uniswapV2Router).addLiquidityAVAX {value: ethAmount} (
+      TokenAddress,
+      tamaGucciTypeById[_tamaGucciType]._price,
+      0,
+      0,
+      DevWallet,
+      block.timestamp + 100
+    );
   }
 }

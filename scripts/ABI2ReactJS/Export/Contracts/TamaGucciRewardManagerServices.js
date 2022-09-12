@@ -58,6 +58,16 @@ async NodeByID ( var0 ) {
 };
 
   
+async NodeTypeCount (  ) {
+    try{
+        let res = await this.Contract.NodeTypeCount(  ).call();
+        return res;
+    }catch(err){
+            console.error('[NodeTypeCountServices] - NodeTypeCount' + err);
+        } 
+};
+
+  
 async RewardManagerAddress (  ) {
     try{
         let res = await this.Contract.RewardManagerAddress(  ).call();
@@ -236,6 +246,16 @@ async feedNode ( _id, _value ) {
 };
 
   
+async getAllNodeTypes (  ) {
+    try{
+        let res = await this.Contract.getAllNodeTypes(  ).call();
+        return res;
+    }catch(err){
+            console.error('[getAllNodeTypesServices] - getAllNodeTypes' + err);
+        } 
+};
+
+  
 async getBlockUntilClog ( _nodeID ) {
     try{
         let res = await this.Contract.getBlockUntilClog( _nodeID ).call();
@@ -262,16 +282,6 @@ async getBlockUntilHungry ( _nodeID ) {
         return res;
     }catch(err){
             console.error('[getBlockUntilHungryServices] - getBlockUntilHungry' + err);
-        } 
-};
-
-  
-async getCurrentDailyROI ( _nodeID ) {
-    try{
-        let res = await this.Contract.getCurrentDailyROI( _nodeID ).call();
-        return res;
-    }catch(err){
-            console.error('[getCurrentDailyROIServices] - getCurrentDailyROI' + err);
         } 
 };
 

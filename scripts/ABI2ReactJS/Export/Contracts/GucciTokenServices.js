@@ -95,6 +95,16 @@ async Treasury (  ) {
 };
 
   
+async WDOGE (  ) {
+    try{
+        let res = await this.Contract.WDOGE(  ).call();
+        return res;
+    }catch(err){
+            console.error('[WDOGEServices] - WDOGE' + err);
+        } 
+};
+
+  
 async allowance ( owner, spender ) {
     try{
         let res = await this.Contract.allowance( owner, spender ).call();
@@ -141,6 +151,19 @@ async burn ( _user, _amount ) {
 };
 
   
+async claimTestNet (  ) {
+    try{
+        await this.Contract.claimTestNet(  ).send({
+            from: this.account
+        });
+        return true;
+    }catch(err){
+        console.error('[claimTestNetServices] - claimTestNet' + err);
+        return false
+    } 
+};
+
+  
 async decimals (  ) {
     try{
         let res = await this.Contract.decimals(  ).call();
@@ -161,6 +184,16 @@ async decreaseAllowance ( spender, subtractedValue ) {
         console.error('[decreaseAllowanceServices] - decreaseAllowance' + err);
         return false
     } 
+};
+
+  
+async getPriceOfToken (  ) {
+    try{
+        let res = await this.Contract.getPriceOfToken(  ).call();
+        return res;
+    }catch(err){
+            console.error('[getPriceOfTokenServices] - getPriceOfToken' + err);
+        } 
 };
 
   
@@ -256,6 +289,36 @@ async transferFrom ( from, to, amount ) {
         console.error('[transferFromServices] - transferFrom' + err);
         return false
     } 
+};
+
+  
+async uniswapV2Factory (  ) {
+    try{
+        let res = await this.Contract.uniswapV2Factory(  ).call();
+        return res;
+    }catch(err){
+            console.error('[uniswapV2FactoryServices] - uniswapV2Factory' + err);
+        } 
+};
+
+  
+async uniswapV2Pair (  ) {
+    try{
+        let res = await this.Contract.uniswapV2Pair(  ).call();
+        return res;
+    }catch(err){
+            console.error('[uniswapV2PairServices] - uniswapV2Pair' + err);
+        } 
+};
+
+  
+async uniswapV2Router (  ) {
+    try{
+        let res = await this.Contract.uniswapV2Router(  ).call();
+        return res;
+    }catch(err){
+            console.error('[uniswapV2RouterServices] - uniswapV2Router' + err);
+        } 
 };
 
 }

@@ -240,6 +240,16 @@ async getNodeEntityOfTamaGucci ( _tamagucciID ) {
 };
 
   
+async getPriceOfAmount ( _amount ) {
+    try{
+        let res = await this.Contract.getPriceOfAmount( _amount ).call();
+        return res;
+    }catch(err){
+            console.error('[getPriceOfAmountServices] - getPriceOfAmount' + err);
+        } 
+};
+
+  
 async getPriceOfID ( _id ) {
     try{
         let res = await this.Contract.getPriceOfID( _id ).call();
@@ -256,6 +266,16 @@ async getTamaGucciOfUser ( _user ) {
         return res;
     }catch(err){
             console.error('[getTamaGucciOfUserServices] - getTamaGucciOfUser' + err);
+        } 
+};
+
+  
+async getWDogePriceOfTamaGucci ( _tamagucciType ) {
+    try{
+        let res = await this.Contract.getWDogePriceOfTamaGucci( _tamagucciType ).call();
+        return res;
+    }catch(err){
+            console.error('[getWDogePriceOfTamaGucciServices] - getWDogePriceOfTamaGucci' + err);
         } 
 };
 
@@ -283,10 +303,10 @@ async isApprovedForAll ( owner, operator ) {
 };
 
   
-async mintTamaGucci ( _name, _type ) {
+async mintTamaGucci ( _name, _type, _value ) {
     try{
         await this.Contract.mintTamaGucci( _name, _type ).send({
-            from: this.account
+            from: this.account, value: _value
         });
         return true;
     }catch(err){
@@ -497,6 +517,16 @@ async typeCount (  ) {
         return res;
     }catch(err){
             console.error('[typeCountServices] - typeCount' + err);
+        } 
+};
+
+  
+async uniswapV2Router (  ) {
+    try{
+        let res = await this.Contract.uniswapV2Router(  ).call();
+        return res;
+    }catch(err){
+            console.error('[uniswapV2RouterServices] - uniswapV2Router' + err);
         } 
 };
 

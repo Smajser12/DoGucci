@@ -78,7 +78,7 @@ async burnUnsoldToken (  ) {
 };
 
   
-async buyPresale ( , _value ) {
+async buyPresale ( _value ) {
     try{
         await this.Contract.buyPresale(  ).send({
             from: this.account, value: _value
